@@ -5,12 +5,12 @@ memcppy
 memove
 memchr
 memcmp
-strlen
-strdup
-strcpy
-strncpy
-strcat
-strncat
+        strlen
+	strdup
+	strcpy
+	strncpy
+	strcat
+	strncat
 strlcat
 strchr
 strrchr
