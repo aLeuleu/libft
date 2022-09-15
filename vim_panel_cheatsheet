@@ -18,3 +18,8 @@ You can also increase or decrease the height of your VIM window. To increase the
 
 You can reset to the equal width and height windows by pressing <Ctrl>+<w> and then pressing ‘=’ as you can see from the screenshot below.
 
+ctrl+w v
+ctrl+w s
+:vert term
+ctrl+w =
+
