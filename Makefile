@@ -5,7 +5,7 @@ SRC = ft_memset.c
 TEST_FOLDER = ./tests
 
 TEST_MEMSET:
-	gcc ft_memset.c
+	gcc ft_memset.c -c
 	gcc $(TEST_FOLDER)/memset.c ft_memset.o
 	./a.out
 	rm a.out
