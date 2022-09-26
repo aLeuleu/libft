@@ -14,5 +14,6 @@ void	*ft_memset(void *pointer, int value, size_t count)
 		ptr[i] = value;
 		i++;
 	}
+	return (pointer);
 }
 

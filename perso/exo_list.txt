@@ -1,8 +1,8 @@
 	memset
-bzero
-memcpy
-memcppy
-memove
+	bzero
+	memcpy
+	memccpy
+	memmove
 memchr
 memcmp
         strlen
