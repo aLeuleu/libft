@@ -9,7 +9,7 @@ char	*ft_strcat(char *src, char *dest)
 	j = 0;
 	while (dest[i])
 		i++;
-	while (src[i])
+	while (src[j])
 	{
 		dest[i] = src[j];
 		i++;
