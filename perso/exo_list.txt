@@ -3,8 +3,8 @@
 	memcpy
 	memccpy
 	memmove
-memchr
-memcmp
+    	memchr
+	memcmp
         strlen
 	strdup
 	strcpy
