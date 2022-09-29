@@ -1,15 +1,13 @@
 //#include "libft.h"
 #include <stddef.h>
-
-
-
+#include <stdlib.h>
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	int	i;
 	unsigned char *uc_s;
 	unsigned char uc_c;
-      
+
 	uc_c = (unsigned char) c;
 	uc_s= (unsigned char *) s;
 	i = 0;
