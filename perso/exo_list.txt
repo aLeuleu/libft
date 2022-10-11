@@ -18,14 +18,15 @@ strlcat
 	strnstr
 	strcmp
 	strncmp
-atoi
-isalpha
-isdigit
-isalnum
-isascii
-isprint
-toupper
-tolower
+	atoi
+	(is whitespace)
+	isalpha
+	isdigit
+	isalnum
+	isascii
+	isprint
+	toupper
+	tolower
 ft_memalloc
 ft_memdel
 ft_strnew
