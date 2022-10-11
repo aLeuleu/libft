@@ -7,7 +7,7 @@ void	*ft_memalloc(size_t size)
 	int	i;
 
 	i = 0;
-	res = malloc(sizeof(size_z) * size);
+	res = (void*) malloc(sizeof(size_z) * size);
 	if (!res)
 		return (NULL);
 	while (i < size)
