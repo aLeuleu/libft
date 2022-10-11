@@ -19,7 +19,7 @@ strlcat
 	strcmp
 	strncmp
 	atoi
-	(is whitespace)
+	(is_whitespace)
 	isalpha
 	isdigit
 	isalnum
