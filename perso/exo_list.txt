@@ -40,7 +40,7 @@ strlcat
 	ft_strnequ
 	ft_strsub
 	ft_strjoin
-ft_strtrim
+	ft_strtrim
 ft_strsplit
 ft_itoa
 	ft_putchar

@@ -13,13 +13,15 @@ char	*ft_strtrim(char const *s)
 	char	*res;
 	unsigned int	start;
 	unsigned int	end;
+	unsigned int	len_s;
 
+	len_s = ft_strlen(s);
 	start = 0;
 	while(is_whitespace(s[start]))
 	{
 		start++;
 	}
-	end = ft_strlen(s);
+	end = len_s; 
 	while (is_whitespace(s[end]))
 	{
 		end--;
@@ -27,7 +29,10 @@ char	*ft_strtrim(char const *s)
 	res = ft_strnew(end - start);	
 	if (!res)
 		return NULL;
-	ft_strncpy(s[start], res, end-start);
-	return (res);
+	if (start == 0 && end == len_s )
+		return (s);
+	else
+		ft_strncpy(s[start], res, end-start);
+		return (res);
 	
 }
