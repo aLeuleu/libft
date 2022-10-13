@@ -41,10 +41,10 @@ strlcat
 	ft_strsub
 	ft_strjoin
 	ft_strtrim
-ft_strsplit
-ft_itoa
-	ft_putchar
 	ft_putstr
+	ft_strsplit
+	ft_itoa
+	ft_putchar
 ft_putendl
 ft_putnbr
 ft_putchar_fd
