@@ -46,7 +46,7 @@ strlcat
 	ft_itoa
 	ft_putchar
 ft_putendl
-ft_putnbr
+    ft_putnbr
 ft_putchar_fd
 ft_putstr_fd
 ft_putendl_fd

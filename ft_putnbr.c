@@ -6,7 +6,10 @@ void	ft_putnbr(int n)
 
     if (n < 0)
     {
-        
+        c = '-';
+	    write(1,&c,1);
+        ft_putnbr(-n);
+        return;
     }
     if (n > 10)
         {
