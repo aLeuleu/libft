@@ -1,0 +1,27 @@
+#!/bin/bash
+echo ------------------------------------------
+clear
+
+
+
+#les variable ci dessous me permettent de faire du formattage de texte facilement
+bold=$(tput bold)
+normal=$(tput sgr0)
+blue=$(tput setaf 4)
+red=$(tput setaf 1)
+black=$(tput setaf 0)
+green=$(tput setaf 2)
+
+exercices=("ft_putchar" "ft_print_alphabet" "ft_print_reverse_alphabet" "ft_print_numbers" "ft_is_negative" "ft_print_comb" "ft_print_comb2" "ft_putnbr" "ft_print_combn")
+
+export i
+((i = 0))
+
+
+echo $blue $bold days $normal
+echo
+while ((i < 10 ))
+do
+    echo caca
+    ((i = i + 1))
+done

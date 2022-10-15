@@ -45,7 +45,7 @@ ft_strtrim
 ft_putstr
 ft_strsplit
 ft_itoa */
-void    ft_putchar(char a);
+void    ft_putchar(char);
 /* ft_putendl
 ft_putnbr
 ft_putchar_fd

@@ -14,3 +14,8 @@
     ],
     "version": 4
 }
+{
+    "[c]": {
+        "editor.defaultFormatter": "keyhr.42-c-format"
+    },
+}

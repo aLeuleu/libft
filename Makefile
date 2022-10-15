@@ -5,7 +5,7 @@ SRC = ft_putchar.c
 all	: $(NAME)
 
 $(NAME):
-	gcc -o $(NAME) $(SRC)
+	gcc -c -o $(NAME) $(SRC)
 
 clean:
 	rm -f *.o
@@ -15,4 +15,3 @@ fclean: clean
 
 re: fclean all
 
-test: 

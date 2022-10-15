@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlen.c                                           :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: leuleu <leuleu@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/04 22:09:56 by leuleu            #+#    #+#             */
-/*   Updated: 2022/09/04 22:09:56 by leuleu           ###   ########lyon.fr   */
+/*   Created: 2022/10/15 16:47:55 by leuleu            #+#    #+#             */
+/*   Updated: 2022/10/15 16:47:55 by leuleu           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,7 @@ void	display_error(char *test_name)
 	assert(0);
 }
 
-void    test_ft_putchar()
-{
-    ft_putchar('d');
-    putchar('d');
-    return;
-}/* 
+/* 
 void    test_ft_strcpy()
 {
     return;
