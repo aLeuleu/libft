@@ -33,7 +33,7 @@ red=$(tput setaf 1)
 black=$(tput setaf 0)
 green=$(tput setaf 2)
 
-exercices=("ft_putchar" "ft_print_alphabet" "ft_print_reverse_alphabet" "ft_print_numbers" "ft_is_negative" "ft_print_comb" "ft_print_comb2" "ft_putnbr" "ft_print_combn")
+exercices=("ft_memset" "ft_putchar" "ft_print_alphabet" "ft_print_reverse_alphabet" "ft_print_numbers" "ft_is_negative" "ft_print_comb" "ft_print_comb2" "ft_putnbr" "ft_print_combn")
 params=
 
 
@@ -41,13 +41,12 @@ params=
 while (( i < 2 ))
 do
 	#execute la norminette
-    echo $blue $bold ${exercices[$i]}.c $normal
+    echo $blue$bold${exercices[$i]}.c $normal
     exercice=${exercices[$i]}.c
     if [[ -f  $exercice ]]
         then
         TEST_FILE=./tests/test_"$exercice"
         if [ -f "$TEST_FILE" ]; then
-            echo norminette
             norminette $exercice 
         	#compile le programme avec un main approprié
         	gcc -Wall -Wextra -Werror -c $exercice
@@ -63,22 +62,17 @@ do
 
         	#controle la différence entre la sortie du user et un fichier de reference (depend du main)
             
-            ///TODO reussir a faire la diff des deux fichier. en lancant la mouli, une erreur apparait
-            diff_file = ./diff/diff_"$exercice".diff
-            echo $diff_file
-        	diff user_result_file expected_result_file > diff_file
-        	if [ -s $mouli_dir/$days/diff/ex"$i".diff ] 
+            diff_file=./diff/diff_"$exercice".diff
+        	diff user_result_file expected_result_file > $diff_file
+        	if [ -s $diff_file ] 
             	then
             		echo "❌❌ " $red KO ! "❌❌" $normal
-            		cat ex"$i".diff
             	else
-            		echo $green " OK !✔️" $normal
+            		echo $green "   OK !✔️" $normal
         	fi
         else
 
             echo $black $bold "the moulileuleu can not solve this exercice for the moment .. " $normal
-            echo $TEST_FILE
-
         fi
 
     else
