@@ -38,7 +38,7 @@ params=
 
 
 
-while (( i < 2 ))
+while (( i < 1))
 do
 	#execute la norminette
     echo $blue$bold${exercices[$i]}.c $normal
@@ -56,14 +56,18 @@ do
         	#enregistre la sortie du user dans un fichier
             user_result_file=./user_results/"$USER"_"$exercice"
             expected_result_file=./expected_results/expected_"$exercice"
-        	echo `./a.out 1 | tr -d '\0' ` > user_result_file
-        	echo `./a.out 2 | tr -d '\0' ` > expected_result_file
+            if [ -s $user_result_file ] 
+            	then
+            		touch $user_result_file
+            fi
+        	echo `./a.out 1 | tr -d '\0' ` > $user_result_file
+        	echo `./a.out 2 | tr -d '\0' ` > $expected_result_file
 
 
         	#controle la différence entre la sortie du user et un fichier de reference (depend du main)
             
             diff_file=./diff/diff_"$exercice".diff
-        	diff user_result_file expected_result_file > $diff_file
+        	diff $user_result_file $expected_result_file > $diff_file
         	if [ -s $diff_file ] 
             	then
             		echo "❌❌ " $red KO ! "❌❌" $normal

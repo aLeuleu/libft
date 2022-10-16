@@ -7,7 +7,11 @@ int	main(int argc, char **argv)
 	int		i;
 
 	char	params[] = {'a', 'b', '0', '?',  '@', '!',0};
-	choice = *argv[1];
+	if(argc > 0)
+    {
+        choice = *argv[1];
+    }
+    
 	if (choice == '1')
 	{
 		i = 0;
@@ -33,13 +37,3 @@ int	main(int argc, char **argv)
 	}
 	return (0);
 }
-
-/*
-1) compiler et executer ft_ asdf
-	compiler test()
-	executer test(ft_asdf)
-2) compiler et executer asdf
-	executer test(asdf)
-3) faire la diff
-
-*/

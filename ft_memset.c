@@ -1,13 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: leuleu <leuleu@student.42lyon.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/16 03:05:37 by leuleu            #+#    #+#             */
+/*   Updated: 2022/10/16 03:05:38 by leuleu           ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stddef.h>
-#include <stdio.h> 
+#include <stdio.h>
 
 void	*ft_memset(void *pointer, int value, size_t count)
 {
-	unsigned char *ptr;
-	size_t i;
+	unsigned char	*ptr;
+	size_t			i;
 
-
-	ptr = (unsigned char*)pointer;
+	ptr = (unsigned char *)pointer;
 	i = 0;
 	while (i < count)
 	{
@@ -16,4 +27,3 @@ void	*ft_memset(void *pointer, int value, size_t count)
 	}
 	return (pointer);
 }
-

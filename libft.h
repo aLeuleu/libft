@@ -1,7 +1,9 @@
 #ifndef LIBFT_H
 #define LIBFT_H
 
-/* ft_memset
+void	*ft_memset(void *pointer, int value, size_t count);
+
+/*
 ft_bzero
 ft_memcpy
 ft_memccpy
