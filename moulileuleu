@@ -71,6 +71,7 @@ do
 				then
 					echo "❌❌ " $red KO ! "❌❌" $normal
 				else
+					rm -rf $diff_file
 					echo $green "   OK !✔️" $normal
 			fi
 		else

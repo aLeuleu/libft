@@ -1,6 +1,8 @@
 NAME = libft.a
 
-SRC =	ft_memset.c \
+SRC =	ft_putnstr.c \
+		ft_putstr.c \
+		ft_memset.c \
 		ft_putchar.c \
 		ft_bzero.c
 

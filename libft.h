@@ -6,6 +6,8 @@
 void	*ft_memset(void *pointer, int value, size_t count);
 
 void	ft_bzero(void *s, size_t n);
+void	ft_putnstr(char *s, size_t len);
+void	ft_putstr(char *s);
 /*
 ft_memcpy
 ft_memccpy
