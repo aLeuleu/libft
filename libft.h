@@ -1,10 +1,12 @@
 #ifndef LIBFT_H
 #define LIBFT_H
 
+#include <stddef.h>
+
 void	*ft_memset(void *pointer, int value, size_t count);
 
+void	ft_bzero(void *s, size_t n);
 /*
-ft_bzero
 ft_memcpy
 ft_memccpy
 ft_memmove

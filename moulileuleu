@@ -33,59 +33,69 @@ red=$(tput setaf 1)
 black=$(tput setaf 0)
 green=$(tput setaf 2)
 
-exercices=("ft_memset" "ft_putchar" "ft_print_alphabet" "ft_print_reverse_alphabet" "ft_print_numbers" "ft_is_negative" "ft_print_comb" "ft_print_comb2" "ft_putnbr" "ft_print_combn")
+exercices=("ft_memset" "ft_putchar" "ft_bzero" "ft_print_reverse_alphabet" "ft_print_numbers" "ft_is_negative" "ft_print_comb" "ft_print_comb2" "ft_putnbr" "ft_print_combn")
+#exercices_already_tested=("ft_memset")
 params=
 
 
 
-while (( i < 1))
+while (( i < 3))
 do
 	#execute la norminette
-    echo $blue$bold${exercices[$i]}.c $normal
-    exercice=${exercices[$i]}.c
-    if [[ -f  $exercice ]]
-        then
-        TEST_FILE=./tests/test_"$exercice"
-        if [ -f "$TEST_FILE" ]; then
-            norminette $exercice 
-        	#compile le programme avec un main approprié
-        	gcc -Wall -Wextra -Werror -c $exercice
-        	gcc -c $TEST_FILE
-        	gcc *.o
-            rm *.o
-        	#enregistre la sortie du user dans un fichier
-            user_result_file=./user_results/"$USER"_"$exercice"
-            expected_result_file=./expected_results/expected_"$exercice"
-            if [ -s $user_result_file ] 
-            	then
-            		touch $user_result_file
-            fi
-        	echo `./a.out 1 | tr -d '\0' ` > $user_result_file
-        	echo `./a.out 2 | tr -d '\0' ` > $expected_result_file
+	echo $blue$bold${exercices[$i]}.c $normal
+	exercice=${exercices[$i]}.c
+	if [[ -f  $exercice ]]
+		then
+		TEST_FILE=./tests/test_"$exercice"
+		if [ -f "$TEST_FILE" ]; then
+			norminette $exercice
+			#recompile la libft en cas d'utilisation
+			#compile le programme avec un main approprié
+			echo
+			echo f1
+			echo
+			gcc -Wall -Wextra -Werror -c $exercice
+			ar -rcs libft.a *.o
+			gcc -c $TEST_FILE
+			echo f2
+			gcc *.o -L. -libft.a
+			rm *.o
+			echo
+			echo f5
+			echo
+			#enregistre la sortie du user dans un fichier
+			user_result_file=./user_results/"$USER"_"$exercice"
+			expected_result_file=./expected_results/expected_"$exercice"
+			if [ -s $user_result_file ]
+				then
+					touch $user_result_file
+			fi
+			echo `./a.out 1 | tr -d '\0' ` > $user_result_file
+			echo `./a.out 2 | tr -d '\0' ` > $expected_result_file
 
 
-        	#controle la différence entre la sortie du user et un fichier de reference (depend du main)
-            
-            diff_file=./diff/diff_"$exercice".diff
-        	diff $user_result_file $expected_result_file > $diff_file
-        	if [ -s $diff_file ] 
-            	then
-            		echo "❌❌ " $red KO ! "❌❌" $normal
-            	else
-            		echo $green "   OK !✔️" $normal
-        	fi
-        else
+			#controle la différence entre la sortie du user et un fichier de reference (depend du main)
 
-            echo $black $bold "the moulileuleu can not solve this exercice for the moment .. " $normal
-        fi
+			diff_file=./diff/diff_"$exercice".diff
+			diff $user_result_file $expected_result_file > $diff_file
+			if [ -s $diff_file ]
+				then
+					echo "❌❌ " $red KO ! "❌❌" $normal
+				else
+					echo $green "   OK !✔️" $normal
+			fi
+		else
 
-    else
-        echo $red "   "ex"$i" does not exist"❌❌" $normal
+			echo $black $bold "the moulileuleu can not solve this exercice for the moment .. " $normal
+		fi
 
-    fi
-    if [[ -f ./a.out ]]
-        then
-        rm ./a.out
-    fi
-    ((i++))
+	else
+		echo $red "   "ex"$i" does not exist"❌❌" $normal
+
+	fi
+	if [[ -f ./a.out ]]
+		then
+		rm ./a.out
+	fi
+	((i++))
 done

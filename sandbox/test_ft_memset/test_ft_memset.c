@@ -9,15 +9,14 @@ int	main(int argc, char **argv)
 {
 	char	choice;
 	int		i;
-
 	char params1[] = {'b', '0', '?', '@', '!', 0};
 	int params2[] = {2, 5, 9, 13, 17};
 	int params3[] = {6, 1, 0, 13, 17};
 	char str[50] = "Aticleworld is a programming Blog.";
 	void	*(*f)(void *, int , size_t );
 
-	choice = 0;
-	if(argc > 0)
+	choice = '1';
+	if(argc > 1)
 	{
 		choice = *argv[1];
 	}

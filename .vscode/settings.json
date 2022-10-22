@@ -1,6 +1,16 @@
 {
-    "terminal.integrated.allowChords": false,
-    "terminal.integrated.drawBoldTextInBrightColors": false,
-    "terminal.integrated.experimentalLinkProvider": false,
-    "terminal.integrated.rendererType": "auto"
+	"terminal.integrated.allowChords": false,
+	"terminal.integrated.drawBoldTextInBrightColors": false,
+	"terminal.integrated.experimentalLinkProvider": false,
+	"terminal.integrated.rendererType": "auto",
+	"editor.tabSize": 4,
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"editor.renderWhitespace": "all",
+	"files.trimTrailingWhitespace": true,
+	"files.insertFinalNewline": true,
+	"workbench.colorCustomizations": {
+		"editorWhitespace.foreground": "#1361c123"
+	},
+	"terminal.integrated.fontSize": 13
 }

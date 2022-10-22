@@ -1,0 +1,19 @@
+Je suis en train de coder une bibliotheque en C.
+Cette bibliotheque est compose de fonctions standards utiles en C, que je m'amuse a recoder moi meme .
+
+Certaines des fonctions doivent appeler d'autres fonctions plus primaire, de la bibliotheque
+
+Par exemple, ma fonction ft_putstr,(qui est une replique de putstr), utilise ft_putchar, une autre fonction de ma blibliotheque (qui est un replique de putchar).
+Ma fonction ft_pustr possede donc un include "libft.h"
+J'essaye de faire des test unitaires sur chacune des fonctions de ma bibliotheque.
+
+Je peux compiler mon ft_putchar avec la commande suivante :
+			gcc -Wall -Wextra -Werror -c ft_putchar.c
+			gcc -c main_de_test_pour_ft_putchar.c
+			gcc *.o
+			rm *.o
+			echo `./a.out` > le_resultat_de_mon_test.txt
+
+Cela fonctionne bien.
+
+Mais pour ft_putstrw
