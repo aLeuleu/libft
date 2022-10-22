@@ -1,9 +1,8 @@
 #include <stddef.h>
 #include <string.h>
-//#include "../libft.h"
+#include "../libft.h"
 #include <stdio.h>
 
-void	*ft_memset(void *pointer, int value, size_t count);
 
 int	main(int argc, char **argv)
 {
@@ -40,7 +39,7 @@ int	main(int argc, char **argv)
 	while (params1[i] != 0)
 	{
 		f(str + params2[i], params1[i], params3[i]);
-		printf("    %s\n\n", str);
+		printf("    %s\r\r", str);
 		i++;
 	}
 

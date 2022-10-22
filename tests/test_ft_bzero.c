@@ -3,19 +3,19 @@
 #include "../libft.h"
 #include <stdio.h>
 
+
 int	main(int argc, char **argv)
 {
 	char	choice;
 	int		i;
-
-	int params2[] = {2, 5, 9, 13, 17, 999};
+	char params1[] = {'b', '0', '?', '@', '!', 0};
+	int params2[] = {17, 13, 9, 5, 2, 1, 0};
 	int params3[] = {6, 1, 0, 13, 17};
-	char str[50] = "Aticleworld is a programming Blog.";
-
+	char str[100] = "Aticleworld is a programming Blog.Aticleworld is a programming Blog.";
 	void	(*f)(void *, size_t );
 
-	choice = 0;
-	if(argc > 0)
+	choice = '1';
+	if(argc > 1)
 	{
 		choice = *argv[1];
 	}
@@ -23,6 +23,7 @@ int	main(int argc, char **argv)
 	if (choice == '1')
 	{
 		f = &ft_bzero;
+
 	}
 	else if (choice == '2')
 	{
@@ -35,10 +36,14 @@ int	main(int argc, char **argv)
 	}
 
 	i = 0;
-	while (params2[i] != 999)
+	while (params1[i] != 0)
 	{
+		printf("str : \"%s\",\rparams : %d\r", str, params3[i]);
 		f(str + params2[i], params3[i]);
-		printf("    %s\n\n", str);
+		printf("-->%s\r\r", str);
+		//ft_print_memory(str, 50);
+		printf("\n");
+
 		i++;
 	}
 

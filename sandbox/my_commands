@@ -1,0 +1,3 @@
+#!/bin/bash
+gcc Hello.c
+echo `./a.out` > a
