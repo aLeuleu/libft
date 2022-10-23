@@ -1,0 +1,1 @@
+dest abcdEFGHIJKLMNOPQRSTUV ptr == &dest[4] dest abcdefghijklmnopqrsTUV ptr == NULL

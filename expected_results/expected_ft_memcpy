@@ -1,1 +1,1 @@
-dest abcdefghijklmnopqrsTUVptr == &dest
+dest ABCDEFGHIJKLMNOPQRSTUV ptr != &dest

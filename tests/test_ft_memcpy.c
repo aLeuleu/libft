@@ -12,33 +12,25 @@ int	main(int argc, char **argv)
 	char	dest[]="ABCDEFGHIJKLMNOPQRSTUV";
 	void	*(*f)(void *, const void *, size_t );
 
-	choice = '1';
+	choice = '0';
 	if(argc > 1)
-	{
 		choice = *argv[1];
-	}
 
 	if (choice == '1')
-	{
 		f = &ft_memcpy;
-	}
 	else if (choice == '2')
-	{
 		f = &memcpy;
-	}
 	else
 	{
 		printf("test error");
 		return (-1);
 	}
 
-	ptr = f(dest,src,sizeof(dest)-4);
-	printf("dest %s\r",dest);
+	printf("dest %s\r\n",dest);
 	if (ptr == &dest)
-	{
-		printf("ptr == &dest");
-	}
+		printf("ptr == &dest\r\n");
+	else
+		printf("ptr != &dest\r\n");
 
-	fflush(stdout);
 	return (0);
 }

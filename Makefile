@@ -6,6 +6,7 @@ SRC =	ft_putnstr.c \
 		ft_putchar.c \
 		ft_bzero.c \
 		ft_memcpy.c \
+		ft_memccpy.c \
 
 OBJ = $(SRC:.c=.o)
 

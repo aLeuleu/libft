@@ -33,25 +33,32 @@ red=$(tput setaf 1)
 black=$(tput setaf 0)
 green=$(tput setaf 2)
 
-exercices=("ft_memset" "ft_putchar" "ft_bzero" "ft_memcpy")
+exercices=("ft_memset" "ft_putchar" "ft_bzero" "ft_memcpy" "ft_memccpy")
 
-
-while (( i < 4))
+make re
+while (( i < 5))
 do
-	#execute la norminette
-	echo $blue$bold${exercices[$i]}.c $normal
+	#affiche en bleu le nom de l'exercice
 	exercice=${exercices[$i]}
+	echo $blue$bold${exercice}.c $normal
+
+	#si l'exercice existe ...
 	if [[ -f  ${exercice}.c ]]
 		then
+
 		TEST_FILE=./tests/test_"$exercice"
+		#si le fichier de test existe ...
 		if [ -f "${TEST_FILE}.c" ]; then
+
+			#execute la norminette
 			norminette ${exercice}.c
+
 			#compile le programme avec un main approprié
 			gcc -Wall -Wextra -Werror -c ${exercice}.c
-			make re -s
 			gcc -c ${TEST_FILE}.c -o ${TEST_FILE}.o
 			gcc ${TEST_FILE}.o -L. libft.a
 			rm *.o tests/*.o
+
 			#enregistre la sortie du user dans un fichier
 			user_result_file=./user_results/"$USER"_"$exercice"
 			expected_result_file=./expected_results/expected_"$exercice"
@@ -64,7 +71,6 @@ do
 
 
 			#controle la différence entre la sortie du user et un fichier de reference (depend du main)
-
 			diff_file=./diff/diff_"$exercice".diff
 			diff $user_result_file $expected_result_file > $diff_file
 			if [ -s $diff_file ]
@@ -75,7 +81,7 @@ do
 					echo $green "   OK !✔️" $normal
 			fi
 		else
-
+			#si le fichier de test n'existe pas ..
 			echo $black $bold "the moulileuleu can not solve this exercice for the moment .. " $normal
 		fi
 

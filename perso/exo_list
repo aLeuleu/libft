@@ -1,8 +1,10 @@
-	memset ✔️
-	bzero ✔️
-	memcpy ✔️
-	memccpy
-	memmove
+
+					coded	tested	verified
+	memset			✔️		✔️
+	bzero			✔️		✔️
+	memcpy			✔️
+	memccpy			✔️
+	memmove			✔️
 	memchr
 	memcmp
 	strlen
