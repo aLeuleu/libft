@@ -1,6 +1,6 @@
 	memset ✔️
 	bzero ✔️
-	memcpy
+	memcpy ✔️
 	memccpy
 	memmove
 	memchr

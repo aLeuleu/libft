@@ -6,11 +6,10 @@
 /*   By: leuleu <leuleu@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 18:58:58 by leuleu            #+#    #+#             */
-/*   Updated: 2022/10/15 19:00:41 by leuleu           ###   ########lyon.fr   */
+/*   Updated: 2022/10/23 02:57:58 by leuleu           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <unistd.h>
 
 void	ft_putchar(char c)

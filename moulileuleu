@@ -33,10 +33,10 @@ red=$(tput setaf 1)
 black=$(tput setaf 0)
 green=$(tput setaf 2)
 
-exercices=("ft_memset" "ft_putchar" "ft_bzero" "ft_print_reverse_alphabet" "ft_print_numbers" "ft_is_negative" "ft_print_comb" "ft_print_comb2" "ft_putnbr" "ft_print_combn")
+exercices=("ft_memset" "ft_putchar" "ft_bzero" "ft_memcpy")
 
 
-while (( i < 3))
+while (( i < 4))
 do
 	#execute la norminette
 	echo $blue$bold${exercices[$i]}.c $normal

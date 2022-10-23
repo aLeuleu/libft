@@ -4,7 +4,8 @@ SRC =	ft_putnstr.c \
 		ft_putstr.c \
 		ft_memset.c \
 		ft_putchar.c \
-		ft_bzero.c
+		ft_bzero.c \
+		ft_memcpy.c \
 
 OBJ = $(SRC:.c=.o)
 
@@ -26,3 +27,4 @@ test: fclean all
 	gcc -o main main.o -L. libft.a
 	echo
 	./main
+

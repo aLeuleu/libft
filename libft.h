@@ -8,8 +8,9 @@ void	*ft_memset(void *pointer, int value, size_t count);
 void	ft_bzero(void *s, size_t n);
 void	ft_putnstr(char *s, size_t len);
 void	ft_putstr(char *s);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
+
 /*
-ft_memcpy
 ft_memccpy
 ft_memmove
 ft_memchr
