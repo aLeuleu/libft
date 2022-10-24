@@ -81,3 +81,10 @@ int				main(int argc, const char *argv[])
 		check_memccpy(mem, "zyxwvuzyxwvu", 'x', 20);
 	return (0);
 }
+/*
+jjjjjjjjjjjjjjjjjjjj
+zyxwvutsrjjjjjjjjjjjjjjjjjjjjNULL
+zyxjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+zyxwvutsrqponmlkjihgfedcbajjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+zyxjjjjjjjjjjjjjjjjjjjjjjjjjj
+ */
