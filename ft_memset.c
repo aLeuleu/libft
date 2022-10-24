@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 03:05:37 by leuleu            #+#    #+#             */
-/*   Updated: 2022/10/24 23:50:47 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/10/25 00:11:51 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	*ft_memset(void *pointer, int value, size_t count)
 	return (pointer);
 }
 
-
+/*
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
@@ -62,7 +62,7 @@ int				main(int argc, const char *argv[])
 		fflush(stdout);
 		check_memset(mem, '\0', 1, mem_size);
 	return (0);
-}
+} */
 /*
 
 cccccjjjjjjjjjj-ccccccccccccccj-
