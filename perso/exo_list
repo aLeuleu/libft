@@ -2,7 +2,7 @@
 					coded	tested	verified
 	memset			✔️			✔️
 	bzero			✔️			✔️
-	memcpy			✔️
+	memcpy			✔️			✔️
 	memccpy			✔️			✔️
 	memmove			✔️					✔️
 	memchr			✔️			✔️
