@@ -4,9 +4,9 @@
 	bzero			✔️			✔️
 	memcpy			✔️			✔️
 	memccpy			✔️			✔️
-	memmove			✔️
+	memmove			✔️			✔️
 	memchr			✔️			✔️
-	memcmp
+	memcmp			✔️			✔️
 	strlen
 	strdup
 	strcpy
