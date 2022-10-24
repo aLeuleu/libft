@@ -14,9 +14,11 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
 /*
 ft_memmove
 ft_memchr
-ft_memcmp
-ft_strlen
-ft_strdup
+ft_memcmp */
+int		ft_strlen(char *s);
+char	*ft_strdup(char *str);
+
+/*
 ft_strcpy
 ft_strncpy
 ft_strcat

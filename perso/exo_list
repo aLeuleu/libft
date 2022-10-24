@@ -1,11 +1,11 @@
 
 					coded	tested	verified
-	memset			✔️		✔️
-	bzero			✔️		✔️
+	memset			✔️			✔️
+	bzero			✔️			✔️
 	memcpy			✔️
-	memccpy			✔️
-	memmove			✔️
-	memchr
+	memccpy			✔️			✔️
+	memmove			✔️					✔️
+	memchr			✔️			✔️
 	memcmp
 	strlen
 	strdup
@@ -20,7 +20,7 @@ strlcat
 	strnstr
 	strcmp
 	strncmp
-	atoi
+	atoi			✔️			✔️
 	(is_whitespace)
 	isalpha
 	isdigit
@@ -45,7 +45,7 @@ strlcat
 	ft_strtrim
 	ft_putstr
 	ft_strsplit
-	ft_itoa
+	ft_itoa			✔️		✔️
 	ft_putchar
 	ft_putendl
 	ft_putnbr
