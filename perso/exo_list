@@ -10,8 +10,8 @@
 	strlen			✔️			✔️
 	strdup			✔️			✔️
 	strcpy			✔️			✔️
-	strncpy
-	strcat
+	strncpy			✔️			✔️
+	strcat			✔️			✔️
 	strncat
 strlcat
 	strchr
