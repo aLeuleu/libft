@@ -26,7 +26,7 @@ static void	ft_print_result(int n)
 	write(1, &c, 1);
 }
 
-int	main(int argc, const char *argv[])
+/* int	main(int argc, const char *argv[])
 {
 	ft_print_result(ft_strlen("Hello !"));
 	printf("\n");
@@ -40,7 +40,7 @@ int	main(int argc, const char *argv[])
 	printf("\n");
 	ft_print_result(ft_strlen("   "));
 	return (0);
-}
+} */
 /*
 7
 1

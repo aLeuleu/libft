@@ -7,7 +7,7 @@
 	memmove			✔️			✔️
 	memchr			✔️			✔️
 	memcmp			✔️			✔️
-	strlen
+	strlen			✔️			✔️
 	strdup
 	strcpy
 	strncpy
