@@ -9,7 +9,7 @@
 	memcmp			✔️			✔️
 	strlen			✔️			✔️
 	strdup			✔️			✔️
-	strcpy
+	strcpy			✔️			✔️
 	strncpy
 	strcat
 	strncat
