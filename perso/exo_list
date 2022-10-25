@@ -12,7 +12,7 @@
 	strcpy			✔️			✔️
 	strncpy			✔️			✔️
 	strcat			✔️			✔️
-	strncat
+	strncat			✔️			✔️
 strlcat
 	strchr
 	strrchr

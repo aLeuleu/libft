@@ -36,23 +36,23 @@ static void		ft_print_result(int n)
 
 int				main(int argc, const char *argv[])
 {
-	ft_print_result(memcpy("salut", "salut", 5));
+	ft_print_result(ft_memcmp("salut", "salut", 5));
 	printf("\n");
-	ft_print_result(memcpy("t\200", "t\0", 2));
+	ft_print_result(ft_memcmp("t\200", "t\0", 2));
 	printf("\n");
-	ft_print_result(memcpy("testss", "test", 5));
+	ft_print_result(ft_memcmp("testss", "test", 5));
 	printf("\n");
-	ft_print_result(memcpy("test", "tEst", 4));
+	ft_print_result(ft_memcmp("test", "tEst", 4));
 	printf("\n");
-	ft_print_result(memcpy("", "test", 4));
+	ft_print_result(ft_memcmp("", "test", 4));
 	printf("\n");
-	ft_print_result(memcpy("test", "", 4));
+	ft_print_result(ft_memcmp("test", "", 4));
 	printf("\n");
-	ft_print_result(memcpy("abcdefghij", "abcdefgxyz", 7));
+	ft_print_result(ft_memcmp("abcdefghij", "abcdefgxyz", 7));
 	printf("\n");
-	ft_print_result(memcpy("abcdefgh", "abcdwxyz", 6));
+	ft_print_result(ft_memcmp("abcdefgh", "abcdwxyz", 6));
 	printf("\n");
-	ft_print_result(memcpy("zyxbcdefgh", "abcdefgxyz", 0));
+	ft_print_result(ft_memcmp("zyxbcdefgh", "abcdefgxyz", 0));
 	return (0);
 }
 /*
