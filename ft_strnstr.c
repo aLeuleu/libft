@@ -1,14 +1,21 @@
 #include "libft.h"
+#include <string.h>
 
 int	is_needle_found(const char *haystack, const char *needle);
 
 char *ft_strnstr(const char *haystack, const char *needle,size_t n)
 {
-	unsigned int i;
+	unsigned int	i;
+	int				needle_len;
+
+	needle_len = ft_strlen((char *)needle);
+	if (n < needle_len)
+		n = 0;
+	else
+		n -= needle_len;
 
 	i = 0;
-	n -= ft_strlen(needle);
-	while (!is_needle_found(haystack + i, needle) && haystack[i] && n > 0)
+	while ( n > 0 && haystack[i] && !is_needle_found(haystack + i, needle))
 	{
 		i++;
 		n--;
@@ -36,7 +43,7 @@ int	is_needle_found(const char *haystack, const char *needle)
 	else
 		return (0);
 }
-
+/*
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
@@ -67,7 +74,7 @@ int				main_2(int argc, int argv)
 {
 	int			arg;
 
-	//alarm(5);
+	alarm(5);
 	if (argc == 1)
 		return (0);
 	else if ((arg = argv) == 1)
@@ -104,7 +111,7 @@ int	main(int argc, char const *argv[])
 	}
 	return (0);
 }
-
+ */
 
 /*
 
@@ -129,12 +136,11 @@ dolor sit amet
 Test 7 :
 NULL
 
-PROBLEME ICI
 Test 8 :
-sit amet
+NULL
 
 Test 9 :
-dolor sit amet
+NULL
 
 Test 10 :
 NULL

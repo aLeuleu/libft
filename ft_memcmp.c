@@ -1,4 +1,4 @@
-//#include "libft.h"
+#include "libft.h"
 #include <stddef.h>
 
 int ft_memcmp(const void *s1, const void *s2, size_t n)
@@ -18,51 +18,3 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
     return (*uc_s1 - *uc_s2);
 }
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
-#include <stdio.h>
-#include "libft.h"
-
-static void		ft_print_result(int n)
-{
-	if (n > 0)
-		write(1, "1", 1);
-	else if (n < 0)
-		write(1, "-1", 2);
-	else
-		write(1, "0", 1);
-}
-
-int				main(int argc, const char *argv[])
-{
-	ft_print_result(ft_memcmp("salut", "salut", 5));
-	printf("\n");
-	ft_print_result(ft_memcmp("t\200", "t\0", 2));
-	printf("\n");
-	ft_print_result(ft_memcmp("testss", "test", 5));
-	printf("\n");
-	ft_print_result(ft_memcmp("test", "tEst", 4));
-	printf("\n");
-	ft_print_result(ft_memcmp("", "test", 4));
-	printf("\n");
-	ft_print_result(ft_memcmp("test", "", 4));
-	printf("\n");
-	ft_print_result(ft_memcmp("abcdefghij", "abcdefgxyz", 7));
-	printf("\n");
-	ft_print_result(ft_memcmp("abcdefgh", "abcdwxyz", 6));
-	printf("\n");
-	ft_print_result(ft_memcmp("zyxbcdefgh", "abcdefgxyz", 0));
-	return (0);
-}
-/*
-0
-1
-1
-1
--1
-1
--1
--1
-1
-	 */

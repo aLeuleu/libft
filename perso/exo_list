@@ -17,8 +17,8 @@
 	strchr			✔️			✔️
 	strrchr			✔️			✔️
 	strstr			✔️			✔️
-	strnstr
-	strcmp
+	strnstr			✔️			✔️
+	strcmp			✔️			✔️
 	strncmp
 	atoi			✔️			✔️
 	(is_whitespace)

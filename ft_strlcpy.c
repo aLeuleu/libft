@@ -1,6 +1,6 @@
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strlcpy(char *dest, char *src, size_t len)
 {
 	int	i;
 

@@ -3,63 +3,55 @@
 
 #include <stddef.h>
 
-void	*ft_memset(void *pointer, int value, size_t count);
-
 void	ft_bzero(void *s, size_t n);
-void	ft_putnstr(char *s, size_t len);
-void	ft_putstr(char *s);
-void	*ft_memcpy(void *dest, const void *src, size_t n);
-void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
-/*
-ft_memmove
-ft_memchr
-ft_memcmp */
-int		ft_strlen(char *s);
-char	*ft_strdup(char *str);
+void	*ft_memset(void *b, int c, size_t len);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
+void	*ft_memmove(void *dst, const void *src, size_t len);
+void	*ft_memchr(const void *s, int c, size_t n);
+void	*ft_calloc(size_t count, size_t size);
 
-/*
-ft_strcpy
-ft_strncpy
-ft_strcat
-ft_strncat */
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+int		ft_isalpha(int c);
+int		ft_isdigit(int c);
+int		ft_isalnum(int c);
+int		ft_isascii(int c);
+int		ft_isprint(int c);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_atoi(const char *str);
+
+size_t	ft_strlen(const char *s);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
+
 char	*ft_strchr(const char *s, int c);
-/*
-ft_strrchr
-ft_strstr
-ft_strnstr
-ft_strcmp
-ft_strncmp
-ft_atoi
-ft_isalpha
-ft_isdigit
-ft_isalnum
-ft_isascii
-ft_isprint
-ft_toupper
-ft_tolower
-ft_memalloc
-ft_memdel
-ft_strnew
-ft_strdel
-ft_strclr
-ft_striter
-ft_striteri
-ft_strmap
-ft_strmapi
-ft_strequ
-ft_strnequ
-ft_strsub
-ft_strjoin
-ft_strtrim
-ft_putstr
-ft_strsplit
-ft_itoa */
-void	ft_putchar(char);
-/* ft_putendl
-ft_putnbr
-ft_putchar_fd
-ft_putstr_fd
-ft_putendl_fd
-ft_putnbr_fd */
+char	*ft_strrchr(const char *s, int c);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+char	*ft_strdup(const char *s1);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_itoa(int n);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+char	**ft_split(char const *s, char c);
+
+/* t_list	*ft_lstnew(void *content);
+t_list	*ft_lstlast(t_list *lst);
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),	void (*del)(void *));
+
+void	ft_lstadd_front(t_list **alst, t_list *new);
+void	ft_lstadd_back(t_list **alst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)(void*));
+void	ft_lstclear(t_list **lst, void (*del)(void*));
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+
+int		ft_lstsize(t_list *lst); */
 #endif

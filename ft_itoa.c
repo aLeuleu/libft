@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:53:28 by alevra            #+#    #+#             */
-/*   Updated: 2022/10/24 18:55:38 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/02 23:52:34 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,42 +73,4 @@ char	*ft_itoa(int n)
 	if (n < 0)
 		res[0] = '-';
 	return (res);
-}
-
-
-#include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
-#include "libft.h"
-
-static void		ft_print_result(char *s)
-{
-	int		len;
-
-	if (!s)
-		write(1, "NULL", 4);
-	else
-	{
-		len = 0;
-		while (s[len])
-			len++;
-		write(1, s, len);
-		free(s);
-	}
-	printf("\n");
-}
-
-int				main(int argc, const char *argv[])
-{
-		ft_print_result(ft_itoa(0));
-		ft_print_result(ft_itoa(-9));
-		ft_print_result(ft_itoa(9));
-		ft_print_result(ft_itoa(10));
-		ft_print_result(ft_itoa(-10));
-		ft_print_result(ft_itoa(8124));
-		ft_print_result(ft_itoa(-9874));
-		ft_print_result(ft_itoa(543000));
-		ft_print_result(ft_itoa(-2147483648LL));
-		ft_print_result(ft_itoa(2147483647));
-	return (0);
 }
