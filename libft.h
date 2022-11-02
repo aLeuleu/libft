@@ -22,8 +22,9 @@ char	*ft_strdup(char *str);
 ft_strcpy
 ft_strncpy
 ft_strcat
-ft_strncat
-ft_strchr
+ft_strncat */
+char	*ft_strchr(const char *s, int c);
+/*
 ft_strrchr
 ft_strstr
 ft_strnstr
@@ -54,7 +55,7 @@ ft_strtrim
 ft_putstr
 ft_strsplit
 ft_itoa */
-void    ft_putchar(char);
+void	ft_putchar(char);
 /* ft_putendl
 ft_putnbr
 ft_putchar_fd
