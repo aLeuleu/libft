@@ -1,5 +1,4 @@
-#include <stddef.h>
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putnstr(char *s, size_t len)
 {

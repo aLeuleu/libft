@@ -1,9 +1,8 @@
 #include "libft.h"
-#include <stdlib.h>
 
-int	is_whitespace(char *c)
+int	is_whitespace(char c)
 {
-	if (*c == ' ' || *c == '/n' || *c == '/t')  
+	if (c == ' ' || c == '\n' || c == '\t')
 		return (1);
 	else
 		return (0);
@@ -11,8 +10,8 @@ int	is_whitespace(char *c)
 char	*ft_strtrim(char const *s)
 {
 	char	*res;
-	unsigned int	start;
-	unsigned int	end;
+	int	start;
+	int	end;
 	unsigned int	len_s;
 
 	len_s = ft_strlen(s);
@@ -21,18 +20,18 @@ char	*ft_strtrim(char const *s)
 	{
 		start++;
 	}
-	end = len_s; 
+	end = len_s;
 	while (is_whitespace(s[end]))
 	{
 		end--;
 	}
-	res = ft_strnew(end - start);	
+	res = ft_strnew(end - start);
 	if (!res)
 		return NULL;
 	if (start == 0 && end == len_s )
-		return (s);
+		return ((char *)s);
 	else
-		ft_strncpy(s[start], res, end-start);
+		ft_strncpy(res,&(s[start]), end-start);
 		return (res);
-	
+
 }

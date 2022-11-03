@@ -1,10 +1,22 @@
-#include "libft"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/03 11:38:13 by alevra            #+#    #+#             */
+/*   Updated: 2022/11/03 14:27:45 by alevra           ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 void ft_putendl_fd(char const *s, int fd)
 {
-    char    c;
+	char	c;
 
 	ft_putstr_fd(s,fd);
-    c = '/n';
-    write(1,&c,fd);
+	c = '\n';
+	write(1,&c,fd);
 }
