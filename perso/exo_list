@@ -10,7 +10,7 @@
 	strlen			✔️			✔️
 	strdup			✔️			✔️
 	strcpy			✔️			✔️
-	strncpy			✔️			✔️
+strlcpy			✔️			✔️
 	strcat			✔️			✔️
 	strncat			✔️			✔️
 	strlcat			✔️			✔️
@@ -41,8 +41,8 @@
 	ft_strequ
 	ft_strnequ
 	ft_strsub
-	ft_strjoin
-	ft_strtrim
+ft_strjoin
+ft_strtrim
 	ft_putstr
 	ft_strsplit
 	ft_itoa			✔️		✔️

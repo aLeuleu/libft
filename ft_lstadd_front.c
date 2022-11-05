@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/03 11:38:06 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/04 22:12:53 by alevra           ###   ########lyon.fr   */
+/*   Created: 2022/11/04 23:35:55 by alevra            #+#    #+#             */
+/*   Updated: 2022/11/05 01:02:14 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c,int fd)
+void	ft_lstadd_front(t_list **list, t_list *new)
 {
-	write(fd,&c,1);
+	if(!list || !new)
+		return ;
+	new->next = *list;
+	*list = new;
 }

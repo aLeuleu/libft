@@ -36,14 +36,25 @@ SRC =	ft_memset.c		\
 		ft_substr.c		\
 		ft_calloc.c		\
 		ft_split.c		\
+		ft_striteri.c	\
+		ft_lstnew.c		\
+		ft_lstadd_front.c	\
+
+BONUS =	ft_lstnew.c		\
+
 
 OBJ = $(SRC:.c=.o)
 
+BONUS_OBJ = $(BONUS:.c=.o)
+
 all	: $(NAME)
+
+bonus: all
 
 $(NAME):
 	gcc -c $(SRC)
 	ar -rcs $(NAME) $(OBJ)
+
 clean:
 	rm -f *.o
 
@@ -57,4 +68,5 @@ test: fclean all
 	gcc -o main main.o -L. libft.a
 	echo
 	./main
+
 
