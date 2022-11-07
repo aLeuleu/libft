@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 23:56:05 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/04 23:56:06 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/07 17:50:03 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,4 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 			*dest_cpy++ = *src_cpy++;
 		return (dest);
 	}
-
 }

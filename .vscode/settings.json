@@ -1,8 +1,6 @@
 {
 	"terminal.integrated.allowChords": false,
 	"terminal.integrated.drawBoldTextInBrightColors": false,
-	"terminal.integrated.experimentalLinkProvider": false,
-	"terminal.integrated.rendererType": "auto",
 	"editor.tabSize": 4,
 	"editor.insertSpaces": false,
 	"editor.detectIndentation": false,
@@ -10,11 +8,14 @@
 	"files.trimTrailingWhitespace": true,
 	"files.insertFinalNewline": true,
 	"workbench.colorCustomizations": {
-		"editorWhitespace.foreground": "#fcfcfc23"
+		"editorWhitespace.foreground": "#8d8d8d31"
 	},
 	"terminal.integrated.fontSize": 13,
 	"C_Cpp.errorSquiggles": "Disabled",
 	"files.associations": {
-		"limits.h": "c"
+		"limits.h": "c",
+		"unistd.h": "c",
+		"stdlib.h": "c",
+		"ft": "c"
 	}
 }

@@ -1,27 +1,40 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/07 17:39:00 by alevra            #+#    #+#             */
+/*   Updated: 2022/11/07 17:42:02 by alevra           ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char	**ft_strsplit(char const *s, char c)
+static	int	w_count(const char *str, char sep)
 {
-	char	**tab_res;
-	int	str_len;
 	int	i;
-	int	j;
+	int	w_count;
+	int	str_len;
 
-	w_count = w_count(s, c);
-	tab_res = (char **)malloc(sizeof(char*) * (w_count) + 1);
-	if (!tab_res)
-		return (NULL);
 	i = 0;
-	j = 0;
-	while (i < w_count)
+	w_count = 0;
+	str_len = ft_strlen(str);
+	while( i <= str_len)
 	{
-		j = set_next_word(s[j], c, tab_res[i]);
+		if (str[i] != sep)
+		{
+			w_count++;
+			while (str[i] != sep)
+				i++;
+		}
 		i++;
 	}
-	tab_res[i] = 0;
-	return (tab_res);
+	return (w_count);
 }
-int	set_next_word(const char *s,char sep, char *ptr)
+
+static	int	set_next_word(const char *s,char sep, char *ptr)
 {
 	int	w_start;
 	int	w_size;
@@ -44,4 +57,26 @@ int	set_next_word(const char *s,char sep, char *ptr)
 		return (NULL);
 	ft_strncpy(str[w_start],ptr,w_size);
 	return (w_start + w_size);
+}
+
+char	**ft_strsplit(char const *s, char c)
+{
+	char	**tab_res;
+	int	str_len;
+	int	i;
+	int	j;
+
+	w_count = w_count(s, c);
+	tab_res = (char **)malloc(sizeof(char*) * (w_count) + 1);
+	if (!tab_res)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (i < w_count)
+	{
+		j = set_next_word(s[j], c, tab_res[i]);
+		i++;
+	}
+	tab_res[i] = 0;
+	return (tab_res);
 }

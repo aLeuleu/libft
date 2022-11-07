@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 17:33:09 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/07 17:33:17 by alevra           ###   ########lyon.fr   */
+/*   Created: 2022/11/07 17:34:08 by alevra            #+#    #+#             */
+/*   Updated: 2022/11/07 17:34:10 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-char *ft_strchr(const char *s, int c)
+void	ft_strdel(char **as)
 {
-	unsigned int i;
-	char char_c;
-	char *res;
-
-	i = 0;
-	char_c = (char) c;
-	while(s[i] != char_c && s[i] )
-		i++;
-	if (s[i] == char_c )
-	{
-		res = (char *) s + i;
-		return (res);
-	}
-	else
-		return (NULL);
+	free(as);
+	*as = NULL;
 }

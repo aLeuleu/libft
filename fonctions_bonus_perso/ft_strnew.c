@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 17:33:09 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/07 17:33:17 by alevra           ###   ########lyon.fr   */
+/*   Created: 2022/11/03 10:29:40 by alevra            #+#    #+#             */
+/*   Updated: 2022/11/07 16:49:21 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strnew(size_t size)
 {
-	unsigned int i;
-	char char_c;
-	char *res;
+	char	*res;
 
-	i = 0;
-	char_c = (char) c;
-	while(s[i] != char_c && s[i] )
-		i++;
-	if (s[i] == char_c )
-	{
-		res = (char *) s + i;
-		return (res);
-	}
-	else
+	res = (char *)malloc( sizeof(char) * size);
+	if (!res)
 		return (NULL);
+	while (size > 0)
+		res[size--] = 0;
+	return (res);
 }
