@@ -10,10 +10,10 @@
 	"files.trimTrailingWhitespace": true,
 	"files.insertFinalNewline": true,
 	"workbench.colorCustomizations": {
-		"editorWhitespace.foreground": "#1361c123"
+		"editorWhitespace.foreground": "#fcfcfc23"
 	},
 	"terminal.integrated.fontSize": 13,
-	"C_Cpp.errorSquiggles": "disabled",
+	"C_Cpp.errorSquiggles": "Disabled",
 	"files.associations": {
 		"limits.h": "c"
 	}
