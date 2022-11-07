@@ -1,11 +1,22 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/07 15:38:16 by alevra            #+#    #+#             */
+/*   Updated: 2022/11/07 15:46:51 by alevra           ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "libft.h"
 
 char	*ft_strnew(size_t size)
 {
 	char	*res;
 
-	res = (char *)malloc( sizeof(char) * size);
+	res = (char *)malloc(sizeof(char) * size);
 	if (!res)
 		return (NULL);
 	while (size > 0)
@@ -24,6 +35,7 @@ int	contains_charset(char c, char const *charset)
 	return (0);
 }
 // TODO adapter strtim pour fonctionner avec un set
+
 char	*ft_strtrim(char const *s, char const *charset)
 {
 	char			*res;
@@ -46,3 +58,8 @@ char	*ft_strtrim(char const *s, char const *charset)
 		return (ft_strncpy(res, &(s[start]), end - start));
 }
 
+int main(int argc, char const *argv[])
+{
+	ft_strtrim("abcBonjourabc", "abc");
+	return 0;
+}

@@ -6,11 +6,13 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 17:41:21 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/03 17:41:25 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/07 15:12:42 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_toupper(char c)
+#include "libft.h"
+
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		return (c - 32);
