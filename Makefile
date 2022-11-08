@@ -48,10 +48,8 @@ SRC =	ft_memset.c		\
 		ft_striteri.c	\
 
 
-BONUS =	ft_lstnew.c		\
+BONUS_SRC =	ft_lstnew.c		\
 		ft_lstadd_front.c	\
-		ft_memccpy.c	\
-		ft_strncpy.c	\
 
 
 OBJ = $(SRC:.c=.o)
@@ -60,11 +58,15 @@ BONUS_OBJ = $(BONUS:.c=.o)
 
 all	: $(NAME)
 
-bonus: all
-
 $(NAME):
-	gcc -c $(SRC)
+	gcc -c -Wall -Wextra -Werror $(SRC)
 	ar -rcs $(NAME) $(OBJ)
+
+
+bonus:
+	gcc -c -Wall -Wextra -Werror $(BONUS_SRC)
+	ar -rcs $(NAME) $(BONUS_OBJ)
+
 
 clean:
 	rm -f *.o
@@ -80,4 +82,4 @@ test: fclean all
 	echo
 	./main
 
-
+.PHONY: bonus all
