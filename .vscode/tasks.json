@@ -5,7 +5,7 @@
 			"label": "build_*.c",
 			"command": "clear&&clang",
 			"args": [
-                "${fileDirname}/*.c",
+				"${fileDirname}/*.c",
 				"-g"
 			],
 			"type": "shell",
@@ -34,9 +34,9 @@
 			"label": "build_custom",
 			"command": "clear&&clang",
 			"args": [
-                "${fileDirname}/ft_split.c",
-                "${fileDirname}/ft_strlcpy.c",
-                "${fileDirname}/ft_strlen.c",
+				"${fileDirname}/${fileBasename}",
+				"${fileDirname}/ft_strlen.c",
+				"${fileDirname}/ft_putchar.c",
 				"-g"
 			],
 			"type": "shell",
@@ -65,7 +65,7 @@
 			"label": "build_singlefile",
 			"command": "clear&&clang",
 			"args": [
-                "${fileDirname}/${fileBasename}",
+				"${fileDirname}/${fileBasename}",
 				"-g"
 			],
 			"type": "shell",

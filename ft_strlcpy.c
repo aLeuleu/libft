@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:18:19 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/08 17:03:58 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/08 18:27:23 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,20 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 
 	i = 0;
-	while (dstsize-- > 0)
+	while (dstsize > 1 && src[i])
 	{
 		dst[i] = src[i];
 		i++;
+		dstsize--;
 	}
-	dst[i] = '\0';
-	return (dstsize + (size_t) i);
+	if (dstsize>0)
+	{
+		dst[i++] = '\0';
+		dstsize--;
+	}
+	while (dstsize-- > 0 && src[i])
+		dst[i++] = '\0';
+
+	return (ft_strlen(src));
 }
+
