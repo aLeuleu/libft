@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 18:18:19 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/08 14:37:58 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/08 17:03:58 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		dst[i] = src[i];
 		i++;
 	}
+	dst[i] = '\0';
 	return (dstsize + (size_t) i);
 }
