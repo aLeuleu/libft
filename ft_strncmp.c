@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 17:34:47 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/07 17:34:48 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/08 14:41:36 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strncmp(const char *s1, const char *s2,size_t n)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 	while(i < n)

@@ -11,7 +11,7 @@
 		"editorWhitespace.foreground": "#8d8d8d31"
 	},
 	"terminal.integrated.fontSize": 13,
-	"C_Cpp.errorSquiggles": "Disabled",
+	"C_Cpp.errorSquiggles": "Enabled",
 	"files.associations": {
 		"limits.h": "c",
 		"unistd.h": "c",
