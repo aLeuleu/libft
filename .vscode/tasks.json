@@ -39,6 +39,8 @@
 				"${fileDirname}/ft_strdup.c",
 				"${fileDirname}/ft_strlcpy.c",
 				"${fileDirname}/ft_putstr_fd.c",
+				"${fileDirname}/ft_lstnew.c",
+				"${fileDirname}/ft_lstadd_front.c",
 				"-g"
 			],
 			"type": "shell",
