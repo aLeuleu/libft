@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 23:33:49 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/09 23:15:52 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/10 00:12:08 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 
 
-static void	insert_str_into_lst(const char *str, size_t	size, t_list *list)
+static void	insert_split(const char *str, size_t	size, char **splits)
 {
 	t_list			*new;
 	char			*new_str;
@@ -30,8 +30,8 @@ static void	insert_str_into_lst(const char *str, size_t	size, t_list *list)
 	ft_strlcpy(new_str, str, size + 1);
 	if (!new_str)
 		return ; //freeTab()
-	new = ft_lstnew(new_str);
-	ft_lstadd_back(&list,new);
+	ft_realloc_split (splits);
+	// copier la nouvelle string dans le nouveau slot libre de splits
 	return ;
 }
 
@@ -51,6 +51,7 @@ char	**ft_split(char const *s, char c)
 	i = -1;
 	start = 0;
 	end = 0;
+	splits = NULL;
 	str_list = ft_lstnew(0);
 	while (s[++i])
 	{
@@ -60,7 +61,7 @@ char	**ft_split(char const *s, char c)
 		while (s[i] != c && s[i])
 			i++;
 		end = i;
-		insert_str_into_lst(s + start, (size_t) end - start, str_list);
+		insert_split(s + start, (size_t) end - start, **splits);
 	}
 	return (splits);
 	//return (create_str_tab());
