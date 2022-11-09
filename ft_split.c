@@ -6,16 +6,11 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 23:33:49 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/08 17:05:31 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/09 11:47:13 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/* Alloue (avec malloc(3)) et retourne un tableau
-de chaînes de caractères obtenu en séparant ’s’ à
-l’aide du caractère ’c’, utilisé comme délimiteur.
-Le tableau doit être terminé par NULL. */
 
 static	int	get_splits_count(char const *s, char c)
 {
@@ -102,11 +97,9 @@ char	**ft_split(char const *s, char c)
 		if (end - start >= 0)
 		{
 			splits[splits_count - j] = (char*)malloc(sizeof(char) * (end - start) );
-			ft_strlcpy(splits[splits_count - j], s + start, end - start + 1);
+			ft_strlcpy(splits[splits_count - j], s + start, end - start + 2);
 			j--;
 		}
 	}
 	return (splits);
 }
-
-

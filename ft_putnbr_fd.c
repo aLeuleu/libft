@@ -6,11 +6,12 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 11:38:38 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/04 21:53:47 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/09 12:12:08 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 void	ft_putnbr_fd(int n, int fd)
 {
 	char	c;
@@ -32,7 +33,7 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(-n, fd);
 		return ;
 	}
-	if (n > 10)
+	if (n >= 10)
 	{
 		ft_putnbr_fd(n / 10, fd);
 		ft_putnbr_fd(n % 10, fd);
@@ -41,3 +42,6 @@ void	ft_putnbr_fd(int n, int fd)
 	c = n + '0';
 	write(fd, &c, 1);
 }
+
+
+

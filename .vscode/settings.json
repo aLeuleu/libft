@@ -16,6 +16,7 @@
 		"limits.h": "c",
 		"unistd.h": "c",
 		"stdlib.h": "c",
-		"ft": "c"
+		"ft": "c",
+		"string.h": "c"
 	}
 }

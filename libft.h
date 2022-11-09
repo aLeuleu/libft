@@ -1,16 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/09 12:47:32 by alevra            #+#    #+#             */
+/*   Updated: 2022/11/09 12:49:30 by alevra           ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
-#define LIBFT_H
+# define LIBFT_H
 
-#include <stddef.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdint.h>
+# include <stddef.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdint.h>
 
-typedef struct	s_list
+typedef struct s_list
 {
 	void			*content;
-	struct	s_list	*next;
-
+	struct s_list	*next;
 }	t_list;
 
 void	ft_bzero(void *s, size_t n);
@@ -52,7 +63,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strdup(const char *str);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strtrim(char const *s1,char const *set);
+char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 

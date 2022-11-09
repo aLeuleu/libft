@@ -6,26 +6,27 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:52:37 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/03 10:57:43 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/09 12:27:14 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_number(char c)
+static int	is_number(char c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
 }
-int	is_plus_or_minus(char c)
+
+static int	is_plus_or_minus(char c)
 {
 	if (c == '+' || c == '-')
 		return (1);
 	return (0);
 }
 
-int	skip_whitespace(char *a)
+static int	skip_whitespace(char *a)
 {
 	int	offset;
 
@@ -34,20 +35,6 @@ int	skip_whitespace(char *a)
 		|| a[offset] == '\v' || a[offset] == '\r' || a[offset] == ' ')
 	{
 		offset++;
-	}
-	return (offset);
-}
-
-int	skip_plus_and_minus(char *a, int *sign)
-{
-	int	offset;
-
-	*sign = 1;
-	offset = 0;
-	while (is_plus_or_minus(a[offset]))
-	{
-		offset++;
-		*sign *= -1;
 	}
 	return (offset);
 }

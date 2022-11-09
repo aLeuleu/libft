@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/09 12:22:36 by alevra            #+#    #+#             */
+/*   Updated: 2022/11/09 12:23:07 by alevra           ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	is_needle_found(const char *haystack, const char *needle);
 
-char *ft_strnstr(const char *haystack, const char *needle,size_t n)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
 	unsigned int	i;
 	int				needle_len;
@@ -12,9 +24,8 @@ char *ft_strnstr(const char *haystack, const char *needle,size_t n)
 		n = 0;
 	else
 		n -= needle_len;
-
 	i = 0;
-	while ( n > 0 && haystack[i] && !is_needle_found(haystack + i, needle))
+	while (n > 0 && haystack[i] && !is_needle_found(haystack + i, needle))
 	{
 		i++;
 		n--;
@@ -27,8 +38,8 @@ char *ft_strnstr(const char *haystack, const char *needle,size_t n)
 
 int	is_needle_found(const char *haystack, const char *needle)
 {
-	unsigned int i;
-	unsigned int j;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
 	j = 0;

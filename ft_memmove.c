@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 23:56:05 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/07 17:50:03 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/09 12:19:48 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t len)
 {
-	char *dest_cpy;
-	char *src_cpy;
+	char	*dest_cpy;
+	char	*src_cpy;
 
 	dest_cpy = (char *)dest;
 	src_cpy = (char *)src;

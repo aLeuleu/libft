@@ -1,5 +1,25 @@
-strjoin
 
-puis, continuer jusq'a ce que tout soit tout vert dans le tester de tripouille.
 puis, installer le tester war machine et faire pareil
 bon courage aurelien
+
+
+
+
+#include <stdio.h>
+#include <string.h>
+
+void	showLeaks()
+{
+	printf("\n");
+}
+
+static int count = 0;
+void	check(int success)
+{
+	if (success)
+		printf("%d : OK", count);
+	else
+		printf("%d : NOK", count);
+	count++;
+}
+

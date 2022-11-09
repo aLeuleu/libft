@@ -36,7 +36,7 @@
 			"args": [
 				"${fileDirname}/${fileBasename}",
 				"${fileDirname}/ft_strlen.c",
-				"${fileDirname}/ft_putchar.c",
+				"${fileDirname}/ft_strdup.c",
 				"-g"
 			],
 			"type": "shell",
