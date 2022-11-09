@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/09 16:39:58 by alevra            #+#    #+#             */
+/*   Updated: 2022/11/09 16:40:07 by alevra           ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void	ft_putstr_fd(char const *s,int fd)
+void	ft_putstr_fd(char const *s, int fd)
 {
-	while(*s)
-		write(fd,s++,1);
+	while (*s)
+		write(fd, s++, 1);
 }

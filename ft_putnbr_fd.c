@@ -6,24 +6,21 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 11:38:38 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/09 12:12:08 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/09 16:51:57 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int input, int fd)
 {
-	char	c;
+	char				c;
+	long long			n;
 
-	if (n == -2147483648)
+	n = (long long) input;
+	if (input == -2147483648)
 	{
-		write(fd, "-2147483648", 11);
-		return ;
-	}
-	if (n == 2147483647)
-	{
-		write(fd, "2147483647", 10);
+		ft_putstr_fd("-2147483648", fd);
 		return ;
 	}
 	if (n < 0)
@@ -42,6 +39,3 @@ void	ft_putnbr_fd(int n, int fd)
 	c = n + '0';
 	write(fd, &c, 1);
 }
-
-
-

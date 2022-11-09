@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:53:28 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/03 11:35:51 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/09 16:54:21 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_nb_size(int n)
 		n = -n;
 	}
 	power_of_tens = 10;
-	while (n > power_of_tens)
+	while (n >= power_of_tens)
 	{
 		power_of_tens *= 10;
 		size++;
@@ -47,13 +47,10 @@ char	*ft_itoa(int n)
 	char	*res;
 	int		abs_n;
 
-	if (n == -2147483648LL || n == 2147483647)
-	{
-		if (n == -2147483648LL)
-			return (ft_strdup("-2147483648"));
-		else if (n == 2147483647)
-			return (ft_strdup("2147483647"));
-	}
+	if (n == -2147483648LL)
+		return (ft_strdup("-2147483648"));
+	else if (n == 2147483647LL)
+		return (ft_strdup("2147483647"));
 	size = ft_nb_size(n);
 	res = malloc(sizeof(char) * (size + 1));
 	abs_n = ft_abs(n);
@@ -69,4 +66,3 @@ char	*ft_itoa(int n)
 		res[0] = '-';
 	return (res);
 }
-

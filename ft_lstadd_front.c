@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 23:35:55 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/05 01:02:14 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/09 17:55:37 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_front(t_list **list, t_list *new)
 {
-	if(!list || !new)
+	if (!list || !new)
 		return ;
 	new->next = *list;
 	*list = new;

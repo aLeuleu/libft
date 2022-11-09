@@ -37,6 +37,38 @@
 				"${fileDirname}/${fileBasename}",
 				"${fileDirname}/ft_strlen.c",
 				"${fileDirname}/ft_strdup.c",
+				"${fileDirname}/ft_strlcpy.c",
+				"${fileDirname}/ft_putstr_fd.c",
+				"-g"
+			],
+			"type": "shell",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"panel": "shared"
+			},
+			"problemMatcher": {
+				"owner": "c",
+				"fileLocation": [
+					"relative",
+					"${workspaceRoot}"
+				],
+				"pattern": {
+					"regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+					"file": 1,
+					"line": 2,
+					"column": 3,
+					"severity": 4,
+					"message": 5
+				}
+			}
+		},
+		{
+			"label": "build_test",
+			"command": "clear&&clang",
+			"args": [
+				"${fileDirname}/${fileBasename}",
+				"${fileDirname}/ft_split.c",
 				"-g"
 			],
 			"type": "shell",

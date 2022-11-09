@@ -6,17 +6,17 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 11:38:13 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/04 22:13:18 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/09 16:41:23 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putendl_fd(char const *s, int fd)
+void	ft_putendl_fd(char const *s, int fd)
 {
 	char	c;
 
-	ft_putstr_fd(s,fd);
+	ft_putstr_fd(s, fd);
 	c = '\n';
-	write(fd,&c,1);
+	write(fd, &c, 1);
 }
