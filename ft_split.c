@@ -6,110 +6,82 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 23:33:49 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/09 17:43:21 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/09 22:35:17 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int	get_splits_count(char const *s, char c)
+//penser a tout free en cas de probleme
+typedef struct s_list_split
 {
-	size_t	i;
-	int		splits;
+	void				*content;
+	struct s_list_split	*next;
+}	t_list_split;
 
-	splits = 0;
-	i = 0;
-	while (s[i])
-	{
-		while (s[i] == c)
-			i++;
-		if (s[i])
-			splits++;
-		while (s[i] != c && s[i])
-			i++;
-	}
-	return (splits);
-}
-
-static char	*ft_strnew(size_t size)
+static t_list_split	*ft_lstnew(void *a)
 {
-	char	*res;
+	t_list_split	*new_element;
 
-	res = (char *)malloc(sizeof(char) * size + 1);
-	if (!res)
+	new_element = malloc(sizeof(t_list_split));
+	if (!new_element)
 		return (NULL);
-	while (size > 0)
-		res[size--] = 0;
-	return (res);
+	new_element->content = a;
+	new_element->next = NULL;
+	return (new_element);
 }
 
-static char	**case_no_splits(char const *s, char c)
+static void	insert_str_into_lst(char *str, size_t	size, t_list_split *list)
 {
-	char	*src_cpy;
-	char	**splits;
+	t_list_split	*new;
+	char			*new_str;
 
-	if (s[0] != c && s[0])
-	{
-		src_cpy = ft_strnew(ft_strlen(s) + 1);
-		ft_strlcpy(src_cpy, s, ft_strlen(s) + 1);
-		splits = malloc(sizeof(char *) * 2);
-		if (!splits)
-			return (NULL);
-		splits[0] = src_cpy;
-		splits[1] = NULL;
-	}
-	else
-	{
-		splits = malloc(sizeof(void *));
-		if (!splits)
-			return (NULL);
-		splits[0] = NULL;
-	}
-	return (splits);
+	new_str = malloc(sizeof(char) * (size + 1));
+	ft_strlcpy(new_str, str, size);
+	if (!new_str)
+		return (NULL);
+	new = ft_lstnew(new_str);
+	new->next = list;
+	list = new;
 }
 
-void	ft_split_by_char(char const *s, char c, char ***splits, int j)
+void	create_str_tab(void)
 {
-	int			start;
-	int			end;
-	int			splits_count;
-	size_t		i;
-
-	i = 0;
-	splits_count = get_splits_count(s, c);
-	while (s[i])
-	{
-		while (s[i] == c)
-			i++;
-		start = (int ) i;
-		while (s[i] != c && s[i])
-			i++;
-		end = (i - 1);
-		if (end - start >= 0)
-		{
-			(*splits)[splits_count - j] = (char *)
-				malloc(sizeof(char) * (end - start + 2));
-			ft_strlcpy((*splits)[splits_count - j],
-				s + start, end - start + 2);
-			j--;
-		}
-	}
+	return ;
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char		**splits;
-	int			splits_count;
-	int			j;
+	char			**splits;
+	int				start;
+	int				end;
+	int				i;
+	t_list_split	*str_list;
 
-	splits_count = get_splits_count(s, c);
-	j = splits_count;
-	if (splits_count == 0 || s == 0)
-		return (case_no_splits(s, c));
-	splits = malloc(sizeof(char *) * splits_count + 1);
-	if (!splits)
-		return (NULL);
-	splits[splits_count] = NULL;
-	ft_split_by_char(s, c, &splits, j);
+	i = -1;
+	start = 0;
+	end = 0;
+	str_list = ft_lstnew(0);
+	while (s[++i])
+	{
+		while (s[i] == c)
+			i++;
+		start = i;
+		while (s[i] != c && s[i])
+			i++;
+		end = i;
+		insert_str_into_lst(s + start, (size_t) end - start, str_list);
+	}
 	return (splits);
+	//return (create_str_tab());
+	//faire un realloc ?
+}
+
+
+
+
+int main(int argc, char const *argv[])
+{
+	char * * tab = ft_split("  tripouille  42  ", ' ');
+	return 0;
 }
