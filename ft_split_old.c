@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split_old.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 23:33:49 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/09 17:43:21 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/10 11:36:27 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,8 +104,8 @@ char	**ft_split(char const *s, char c)
 
 	splits_count = get_splits_count(s, c);
 	j = splits_count;
-	if (splits_count == 0 || s == 0)
-		return (case_no_splits(s, c));
+/* 	if (splits_count == 0 || s == 0)
+		return (case_no_splits(s, c)); */
 	splits = malloc(sizeof(char *) * splits_count + 1);
 	if (!splits)
 		return (NULL);
