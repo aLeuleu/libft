@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:38:16 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/09 17:00:09 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/11 00:39:43 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ char	*ft_strtrim(char const *s, char const *charset)
 	int				end;
 	unsigned int	len_s;
 
+	if (!s)
+		return (NULL);
 	len_s = ft_strlen(s);
 	start = 0;
 	while (contains_charset(s[start], charset) && s[start])

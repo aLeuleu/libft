@@ -43,6 +43,8 @@
 				"${fileDirname}/ft_putstr_fd.c",
 				"${fileDirname}/ft_lstnew.c",
 				"${fileDirname}/ft_lstadd_front.c",
+				"${fileDirname}/ft_lstsize.c",
+				"${fileDirname}/ft_lstlast.c",
 				"-g"
 			],
 			"type": "shell",

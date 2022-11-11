@@ -1,7 +1,11 @@
-les statics
+les static
+
 le relink du makefile
 
 protection des mallocs
 
-norme ( faire remarquer les include inutiles, sanctionner les mauvais type ...)
+norme ( faire remarquer les include inutiles, sanctionner les mauvais type s_ uniquement pour les structs ...)
 
+leaks sur splits  avec leaks -atExit -- ./a.out
+
+-fsanitize=address ?

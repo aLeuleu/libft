@@ -6,7 +6,7 @@
 #    By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 20:55:17 by alevra            #+#    #+#              #
-#    Updated: 2022/11/09 17:54:57 by alevra           ###   ########lyon.fr    #
+#    Updated: 2022/11/11 00:46:31 by alevra           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,9 +48,12 @@ SRC =	ft_memset.c		\
 		ft_striteri.c	\
 
 
-BONUS_SRC =	ft_lstnew.c		\
+BONUS_SRC =	ft_lstnew.c			\
 			ft_lstadd_front.c	\
-
+			ft_lstsize.c		\
+			ft_lstlast.c		\
+			ft_lstadd_back.c	\
+			ft_lstdelone.c		\
 
 OBJ = $(SRC:.c=.o)
 
@@ -58,15 +61,14 @@ BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
 all	: $(NAME)
 
-$(NAME):
-	gcc -c -Wall -Wextra -Werror $(SRC)
+$(NAME): $(OBJ)
 	ar -rcs $(NAME) $(OBJ)
 
-
-bonus:
-	gcc -c -Wall -Wextra -Werror $(BONUS_SRC)
+bonus: $(BONUS_OBJ)
 	ar -rcs $(NAME) $(BONUS_OBJ)
 
+%.o : %.c libft.h
+	gcc -c -Wall -Wextra -Werror $<
 
 clean:
 	rm -f *.o

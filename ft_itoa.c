@@ -6,13 +6,13 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:53:28 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/09 16:54:21 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/11 00:57:00 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_abs(int n)
+static int	ft_abs(int n)
 {
 	if (n < 0)
 		return (-n);
@@ -20,7 +20,7 @@ int	ft_abs(int n)
 		return (n);
 }
 
-int	ft_nb_size(int n)
+static int	ft_nb_size(int n)
 {
 	int	power_of_tens;
 	int	size;
@@ -53,6 +53,8 @@ char	*ft_itoa(int n)
 		return (ft_strdup("2147483647"));
 	size = ft_nb_size(n);
 	res = malloc(sizeof(char) * (size + 1));
+	if (!res)
+		return (NULL);
 	abs_n = ft_abs(n);
 	res[size] = '\0';
 	i = 0;

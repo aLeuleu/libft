@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 22:43:21 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/09 13:55:42 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/11 00:52:00 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,18 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t			size;
 	unsigned int	i;
 
+	if (!s || !f)
+		return (NULL);
 	i = 0;
 	size = 0;
 	while (s[size])
 		size++;
 	if (size)
-		res = ft_strnew(size + 1);
+		res = ft_strnew(size);
 	else
 		return (ft_strdup(""));
+	if (!res)
+		return (NULL);
 	while (s[i])
 	{
 		res[i] = f(i, s[i]);

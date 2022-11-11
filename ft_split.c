@@ -6,82 +6,81 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 23:33:49 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/10 14:10:30 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/11 00:44:14 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	freetab(void **tab)
+static void	ft_freetab(void **tab, int position)
 {
-	int	i;
-
-	i = 0;
-	while (tab[i])
-		free(tab[i++]);
-	free(tab[i]);
+	if (position >= 0)
+		while (position >= 0)
+			free(tab[position--]);
 	free(tab);
 }
 
-static char	**ft_realloc_split(char **splits, int splits_size)
+static int	count_words(const char *str, char c)
 {
-	char	**splits_new;
+	int	i;
+	int	trigger;
 
-	splits_new = malloc(sizeof(char *) * (splits_size + 1));
-	if (!splits_new)
-		return (freetab((void **)splits), NULL);
-	if (splits != NULL)
-		ft_memmove(splits_new, splits, sizeof(char *) * splits_size);
-	free(splits);
-	splits_new[splits_size] = NULL;
-	return (splits_new);
+	i = 0;
+	trigger = 0;
+	while (str && *str)
+	{
+		if (*str != c && trigger == 0)
+		{
+			trigger = 1;
+			i++;
+		}
+		else if (*str == c)
+			trigger = 0;
+		str++;
+	}
+	return (i);
 }
 
-static char	**insert_split(const char *str, int	size, char **splits, int splits_size)
+static char	*word_dup(const char *str, int start, int finish)
 {
-	char			*new_str;
+	char	*word;
+	int		i;
 
-	if (size < 0)
-		size = 0;
-	new_str = malloc(sizeof(char) * (size + 1));
-	if (!new_str)
-		return (freetab((void **)splits), NULL);
-	ft_strlcpy(new_str, str, size + 1);
-	splits = ft_realloc_split (splits,splits_size);
-	splits[splits_size - 1] = new_str;
-	return (splits);
+	i = 0;
+	word = malloc((finish - start + 1) * sizeof(char));
+	if (!word)
+		return (NULL);
+	while (start < finish)
+		word[i++] = str[start++];
+	word[i] = '\0';
+	return (word);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char			**splits;
-	int				start;
-	int				end;
-	int				i;
-	int				splits_size;
+	size_t	i;
+	size_t	j;
+	int		index_start;
+	char	**splits;
 
-	splits_size = 1;
-	i = -1;
-	start = 0;
-	end = 0;
-	splits = NULL;
-	while (s[++i])
+	splits = malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (!s || !(splits))
+		return (NULL);
+	i = 0;
+	j = 0;
+	index_start = -1;
+	while (i <= ft_strlen(s))
 	{
-		while (s[i] == c)
-			start = ++i;
-		while (s[i] != c && s[i])
-			end = ++i;
-		if (start < end || splits == NULL)
-			splits = insert_split(s + start, end - start, splits, splits_size++);
-		if (splits == NULL)
-			return (NULL);
-		start = end;
+		if (s[i] != c && index_start < 0)
+			index_start = i++;
+		else if ((s[i++] == c || (i - 1) == ft_strlen(s)) && index_start >= 0)
+		{
+			splits[j++] = word_dup(s, index_start, (i - 1));
+			if (splits[j - 1] == NULL)
+				return (ft_freetab((void **)splits, j - 2), NULL);
+			index_start = -1;
+		}
 	}
+	splits[j] = 0;
 	return (splits);
-}
-
-int main(int argc, char const *argv[])
-{
-	char **tab = ft_split("     ", ' ');
-	return 0;
 }

@@ -6,19 +6,21 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:22:36 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/09 12:23:07 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/11 00:31:03 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_needle_found(const char *haystack, const char *needle);
+static int	is_needle_found(const char *haystack, const char *needle);
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
 	unsigned int	i;
 	int				needle_len;
 
+	if (!haystack || !needle)
+		return (NULL);
 	needle_len = ft_strlen((char *)needle);
 	if (n < (size_t) needle_len)
 		n = 0;
@@ -36,7 +38,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 		return (NULL);
 }
 
-int	is_needle_found(const char *haystack, const char *needle)
+static int	is_needle_found(const char *haystack, const char *needle)
 {
 	unsigned int	i;
 	unsigned int	j;

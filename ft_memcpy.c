@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 17:44:11 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/10 12:55:54 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/11 00:23:05 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	const unsigned char	*srcc;
 	int					i;
 
+	if (!dest || !src)
+		return (NULL);
 	srcc = (unsigned char *)src;
 	destc = (unsigned char *)dest;
 	i = 0;
