@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 22:55:54 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/11 00:37:47 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/21 11:30:08 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ static int	ft_min(int a, int b)
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned int	i;
-	char			*res;
+	size_t	i;
+	char	*res;
 
 	if (!s)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 10:49:07 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/11 00:39:12 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/21 11:25:31 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ static char	*ft_strnew(size_t size)
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char			*res;
-	unsigned int	len_s1;
-	unsigned int	len_s2;
+	char	*res;
+	size_t	len_s1;
+	size_t	len_s2;
 
 	if (!s1 || !s2)
 		return (NULL);

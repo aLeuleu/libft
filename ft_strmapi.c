@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 22:43:21 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/11 00:52:00 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/21 11:26:41 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ static	char	*ft_strnew(size_t size)
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char			*res;
-	size_t			size;
-	unsigned int	i;
+	char	*res;
+	size_t	size;
+	size_t	i;
 
 	if (!s || !f)
 		return (NULL);

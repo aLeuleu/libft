@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:22:22 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/09 12:22:23 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/21 11:25:01 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strdup(const char *str)
 {
 	char	*new;
-	int		i;
+	size_t	i;
 
 	new = malloc(sizeof(char) * ft_strlen(str) + 1);
 	if (!new)

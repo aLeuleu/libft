@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 17:33:09 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/09 12:30:08 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/21 11:24:40 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	unsigned int	i;
-	char			char_c;
-	char			*res;
+	size_t	i;
+	char	char_c;
+	char	*res;
 
 	i = 0;
 	char_c = (char) c;

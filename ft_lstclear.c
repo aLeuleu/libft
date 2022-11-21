@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 23:10:15 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/11 09:50:37 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/21 11:20:20 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
+	t_list	*temp;
+
 	if (!lst || !del)
 		return ;
-	if (*lst != NULL && (*lst)->next != NULL )
-		ft_lstclear(&((*lst)->next),del);
-	else
+	while (*lst)
 	{
-		if (!lst)
-			del(lst);
-		if (*lst != NULL)
-			del(*lst);
+		temp = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = temp;
 	}
 }

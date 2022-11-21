@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:22:36 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/11 00:31:03 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/21 16:24:00 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,11 @@ static int	is_needle_found(const char *haystack, const char *needle);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
 	unsigned int	i;
-	int				needle_len;
+	size_t			needle_len;
 
-	if (!haystack || !needle)
-		return (NULL);
 	needle_len = ft_strlen((char *)needle);
-	if (n < (size_t) needle_len)
-		n = 0;
+	if (n < needle_len && *haystack)
+		return (NULL);
 	else
 		n -= needle_len;
 	i = 0;
@@ -40,8 +38,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 
 static int	is_needle_found(const char *haystack, const char *needle)
 {
-	unsigned int	i;
-	unsigned int	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = 0;

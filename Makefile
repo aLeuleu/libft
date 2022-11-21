@@ -6,7 +6,7 @@
 #    By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 20:55:17 by alevra            #+#    #+#              #
-#    Updated: 2022/11/11 09:40:35 by alevra           ###   ########lyon.fr    #
+#    Updated: 2022/11/21 15:37:19 by alevra           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,14 +48,15 @@ SRC =	ft_memset.c		\
 		ft_striteri.c	\
 
 
-BONUS_SRC =	ft_lstnew.c			\
+BONUS_SRC =	ft_lstnew.c		\
 			ft_lstadd_front.c	\
 			ft_lstadd_back.c	\
 			ft_lstsize.c		\
 			ft_lstlast.c		\
-			ft_lstdelone.c		\
+			ft_lstdelone.c	\
 			ft_lstiter.c		\
 			ft_lstclear.c		\
+			ft_lstmap.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -69,15 +70,17 @@ $(NAME): $(OBJ)
 bonus: $(BONUS_OBJ)
 	ar -rcs $(NAME) $(BONUS_OBJ)
 
-%.o : %.c libft.h
+%.o : %.c libft.h Makefile
 	gcc -c -Wall -Wextra -Werror $<
 
 clean:
-	rm -f *.o
+	rm -f $(OBJ)
+	rm -f $(BONUS_OBJ)
 
 fclean: clean
 	rm -f $(NAME)
 
-re: fclean all
+re: fclean
+	${MAKE} all
 
-.PHONY: bonus all
+.PHONY: bonus all clean fclean re

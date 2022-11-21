@@ -1,8 +1,0 @@
-liste des commandes utiles pour linker une librairie
-
-ranlib
-
-cc
-
-les flags : gcc -l -L
---> regarder un tuto youtube

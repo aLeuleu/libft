@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:53:20 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/09 12:20:45 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/21 11:38:34 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int				i;
+	size_t			i;
 	unsigned char	*uc_s;
 	unsigned char	uc_c;
 

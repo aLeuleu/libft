@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:52:37 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/09 12:27:14 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/21 16:29:30 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ static int	skip_whitespace(char *a)
 
 int	ft_atoi(const char *a)
 {
-	int	res;
-	int	i;
-	int	sign;
+	long long	res;
+	size_t		i;
+	int			sign;
 
 	res = 0;
 	i = skip_whitespace((char *)a);
@@ -59,10 +59,11 @@ int	ft_atoi(const char *a)
 		i++;
 	while (is_number(a[i]))
 	{
-		res *= 10;
-		res += a[i] - '0';
+		if (res != ((res * 10) + (a[i] - 48)) / 10)
+			return ((sign + 1) / -2);
+		res = (res * 10) + a[i] - '0';
 		i++;
 	}
 	res *= sign;
-	return (res);
+	return ((int)res);
 }

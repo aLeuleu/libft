@@ -6,35 +6,33 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:53:28 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/11 00:57:00 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/21 16:11:51 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_abs(int n)
+static unsigned int	ft_abs(int n)
 {
+	unsigned int	res;
+
 	if (n < 0)
-		return (-n);
+		res = -n;
 	else
-		return (n);
+		res = n;
+	return (res);
 }
 
-static int	ft_nb_size(int n)
+static size_t	ft_nb_size(unsigned int n)
 {
-	int	power_of_tens;
-	int	size;
+	size_t	size;
 
-	size = 1;
-	if (n < 0)
+	size = 0;
+	if (n == 0)
+		return (1);
+	while (n > 0)
 	{
-		size++;
-		n = -n;
-	}
-	power_of_tens = 10;
-	while (n >= power_of_tens)
-	{
-		power_of_tens *= 10;
+		n /= 10;
 		size++;
 	}
 	return (size);
@@ -42,20 +40,18 @@ static int	ft_nb_size(int n)
 
 char	*ft_itoa(int n)
 {
-	int		i;
-	int		size;
-	char	*res;
-	int		abs_n;
+	size_t			i;
+	size_t			size;
+	char			*res;
+	unsigned int	abs_n;
 
-	if (n == -2147483648LL)
-		return (ft_strdup("-2147483648"));
-	else if (n == 2147483647LL)
-		return (ft_strdup("2147483647"));
-	size = ft_nb_size(n);
+	abs_n = ft_abs(n);
+	size = ft_nb_size(abs_n);
+	if (n < 0)
+		size ++;
 	res = malloc(sizeof(char) * (size + 1));
 	if (!res)
 		return (NULL);
-	abs_n = ft_abs(n);
 	res[size] = '\0';
 	i = 0;
 	while (i < size)
