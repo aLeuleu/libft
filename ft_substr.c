@@ -6,18 +6,11 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 22:55:54 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/21 11:30:08 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/21 16:53:22 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_min(int a, int b)
-{
-	if (a > b)
-		return (b);
-	return (a);
-}
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -29,11 +22,16 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (len == 0 || start > ft_strlen(s))
 		return (ft_strdup(""));
-	res = (char *)ft_calloc(ft_min(ft_strlen(s) + 1,
-				(int)len +1), sizeof(char));
+	if (ft_strlen(s) < len)
+		len = ft_strlen(s);
+	res = (char *)ft_calloc(len + 1, sizeof(char));
 	if (!res)
 		return (NULL);
-	while (len > 0 && s[start] != '\0' && i < len)
-		res[i++] = s[start++];
+	while (len > 0 && s[start] > 0 && i < len)
+	{
+		res[i] = s[start];
+		i++;
+		start++;
+	}
 	return (res);
 }
