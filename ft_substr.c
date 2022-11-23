@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 22:55:54 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/21 16:53:22 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/23 14:55:32 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (len == 0 || start > ft_strlen(s))
 		return (ft_strdup(""));
-	if (ft_strlen(s) < len)
-		len = ft_strlen(s);
+	if (len > (ft_strlen(s) - (size_t)start))
+		len = ft_strlen(s) - (size_t)start;
 	res = (char *)ft_calloc(len + 1, sizeof(char));
 	if (!res)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:52:37 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/21 16:29:30 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/23 10:05:00 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	is_plus_or_minus(char c)
 	return (0);
 }
 
-static int	skip_whitespace(char *a)
+static int	skip_whitespace(const char *a)
 {
 	int	offset;
 
@@ -46,7 +46,7 @@ int	ft_atoi(const char *a)
 	int			sign;
 
 	res = 0;
-	i = skip_whitespace((char *)a);
+	i = skip_whitespace(a);
 	sign = 1;
 	if (is_plus_or_minus(a[i]) && is_plus_or_minus(a[i + 1]))
 		return (0);

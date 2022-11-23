@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:38:16 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/11 00:39:43 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/23 14:47:13 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static	char	*ft_strnew(int size)
 	char	*res;
 
 	if (size <= 0)
-		size = 1;
+		size = 0;
 	res = (char *)malloc(sizeof(char) * size + 1);
 	if (!res)
 		return (NULL);
