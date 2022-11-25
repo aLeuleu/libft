@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:47:32 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/24 17:54:11 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/25 08:39:54 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,10 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),	void (*del)(void *));
+int		ft_putstr(char *str);
+void	ft_putnbr(int n);
+int		ft_putnbr_base(unsigned long nbr, char *base);
+int		ft_put_u_nbr(unsigned int n);
+int		ft_itoa_printf(int n);
+void	ft_putchar(char c);
 #endif

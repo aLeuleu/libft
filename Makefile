@@ -6,7 +6,7 @@
 #    By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 20:55:17 by alevra            #+#    #+#              #
-#    Updated: 2022/11/23 15:00:03 by alevra           ###   ########lyon.fr    #
+#    Updated: 2022/11/25 08:40:20 by alevra           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,12 @@ SRC =	ft_memset.c		\
 		ft_substr.c		\
 		ft_split.c		\
 		ft_striteri.c	\
+		ft_putstr.c		\
+		ft_putnbr.c		\
+		ft_putnbr_base.c	\
+		ft_putchar.c	\
+		ft_put_u_nbr.c	\
+		ft_itoa_printf.c	\
 
 
 BONUS_SRC =	ft_lstnew.c		\
@@ -57,6 +63,7 @@ BONUS_SRC =	ft_lstnew.c		\
 			ft_lstiter.c		\
 			ft_lstclear.c		\
 			ft_lstmap.c
+ 
 
 OBJ = $(SRC:.c=.o)
 
