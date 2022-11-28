@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 10:53:02 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/25 08:32:07 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/11/28 14:28:20 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,6 @@ int	ft_putnbr_base(unsigned long nbr, char *base)
 	if (!(base_is_valid(base)))
 		return (0);
 	base_size = ft_strlen(base);
-	if (nbr < 0)
-	{
-		write(1, "-", 1);
-		nbr *= -1;
-	}
 	if (nbr > base_size -1)
 	{
 		str_len += ft_putnbr_base(nbr / base_size, base);
