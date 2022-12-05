@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 10:53:02 by alevra            #+#    #+#             */
-/*   Updated: 2022/12/05 22:13:38 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/12/05 22:49:50 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ static int				char_is_plus_or_minus(char c);
 
 int	ft_putnbr_base(long nbr, char *base)
 {
-	unsigned long	base_size;
-	int				str_len;
+	long	base_size;
+	int		str_len;
 
 	str_len = 0;
 	if (!(base_is_valid(base)))
