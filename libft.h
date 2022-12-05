@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:47:32 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/25 11:21:18 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/12/05 22:16:27 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,19 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
+
+# ifndef BASE_HEXA
+#  define BASE_HEXA "0123456789abcdef"
+# endif
+
+# ifndef BASE_DEC
+#  define BASE_DEC "0123456789"
+# endif
+
+# ifndef BASE_HEXA_MAJ
+#  define BASE_HEXA_MAJ "0123456789ABCDEF"
+# endif
 
 typedef struct s_list
 {
@@ -68,8 +81,9 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),	void (*del)(void *));
 int		ft_putstr(char *str);
 void	ft_putnbr(int n);
-int		ft_putnbr_base(unsigned long nbr, char *base);
+int		ft_putnbr_base(long nbr, char *base);
+int		ft_put_u_nbr_base(unsigned long nbr, char *base);
 int		ft_put_u_nbr(unsigned int n);
 int		ft_itoa_printf(int n);
-void	ft_putchar(char c);
+size_t	ft_putchar(char c);
 #endif

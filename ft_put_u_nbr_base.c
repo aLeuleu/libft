@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*   ft_put_u_nbr_base.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 10:53:02 by alevra            #+#    #+#             */
-/*   Updated: 2022/12/05 22:13:38 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/12/05 22:08:21 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,28 @@
 static unsigned int		base_is_valid(char *base);
 static int				char_is_plus_or_minus(char c);
 
-int	ft_putnbr_base(long nbr, char *base)
+int	ft_put_u_nbr_base(unsigned long nbr, char *base)
 {
-	unsigned long	base_size;
-	int				str_len;
+	unsigned int		base_size;
+	int					str_len;
+	int					res;
 
 	str_len = 0;
+	res = 0;
 	if (!(base_is_valid(base)))
-		return (0);
-	base_size = (int)ft_strlen(base);
-	if (nbr < 0)
-	{
-		write (1, "-", 1);
-		nbr *= -1;
+		return (-1);
+	base_size = ft_strlen(base);
+	if (nbr >= base_size)
+	{	
+		res = ft_put_u_nbr_base(nbr / base_size, base);
+		if (res < 0)
+			return (-1);
+		str_len += res;
 	}
-	if (nbr > base_size -1)
-	{
-		str_len += ft_putnbr_base(nbr / base_size, base);
-		str_len += ft_putnbr_base(nbr % base_size, base);
-	}
-	if (nbr < base_size)
-	{
-		ft_putchar(base[nbr]);
-		str_len ++;
-	}
+	res = ft_putchar(base[nbr % base_size]);
+	if (res < 0)
+		return (-1);
+	str_len += res;
 	return (str_len);
 }
 

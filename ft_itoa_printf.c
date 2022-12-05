@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:53:28 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/25 08:39:03 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/12/05 22:08:15 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	ft_itoa_printf(int n)
 		size ++;
 	res = malloc(sizeof(char) * (size + 1));
 	if (!res)
-		return (0);
+		return (-1);
 	res[size] = '\0';
 	i = 0;
 	while (i < size)
@@ -62,7 +62,7 @@ int	ft_itoa_printf(int n)
 	}
 	if (n < 0)
 		res[0] = '-';
-	ft_putstr(res);
-	free(res);
-	return (size);
+	if (ft_putstr(res) < 0)
+		return (free(res), -1);
+	return (free(res), size);
 }
