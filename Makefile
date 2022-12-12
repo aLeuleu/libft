@@ -6,7 +6,7 @@
 #    By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 20:55:17 by alevra            #+#    #+#              #
-#    Updated: 2022/12/12 19:33:48 by alevra           ###   ########lyon.fr    #
+#    Updated: 2022/12/12 20:00:13 by alevra           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,7 @@ SRC =	ft_memset.c			\
 		ft_putchar.c		\
 		ft_put_u_nbr.c		\
 		ft_itoa_printf.c	\
-		t_lstnew.c			\
+		ft_lstnew.c			\
 		ft_lstadd_front.c	\
 		ft_lstadd_back.c	\
 		ft_lstsize.c		\
