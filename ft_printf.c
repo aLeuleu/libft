@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 16:08:31 by alevra            #+#    #+#             */
-/*   Updated: 2022/12/12 20:08:25 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/12/12 21:07:00 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_put_ptr(unsigned long nbr)
 	res = ft_putstr("0x");
 	if (res < 0)
 		return (-1);
-	res = ft_put_u_nbr_base(nbr, BASE_HEXA);
+	res = ft_put_u_nbr_base(nbr, BASE_HEXA, 1);
 	if (res < 0)
 		return (-1);
 	return (res + 2);
@@ -28,7 +28,7 @@ static int	ft_put_ptr(unsigned long nbr)
 static int	switch_printf(char format, va_list args)
 {
 	if (format == 'b')
-		return (ft_put_u_nbr_base(va_arg(args, unsigned int), "01"));
+		return (ft_put_u_nbr_base(va_arg(args, unsigned int), "01", 1));
 	if (format == 'c')
 		return ((int)ft_putchar((char)va_arg(args, int)));
 	if (format == 's')
@@ -38,11 +38,11 @@ static int	switch_printf(char format, va_list args)
 	if (format == 'd' || format == 'i')
 		return (ft_itoa_printf(va_arg(args, int)));
 	if (format == 'u')
-		return (ft_put_u_nbr_base(va_arg(args, unsigned int), BASE_DEC));
+		return (ft_put_u_nbr_base(va_arg(args, unsigned int), BASE_DEC, 0));
 	if (format == 'x')
-		return (ft_put_u_nbr_base(va_arg(args, unsigned int), BASE_HEXA));
+		return (ft_put_u_nbr_base(va_arg(args, unsigned int), BASE_HEXA, 0));
 	if (format == 'X')
-		return (ft_put_u_nbr_base(va_arg(args, unsigned int), BASE_HEXA_MAJ));
+		return (ft_put_u_nbr_base(va_arg(args, unsigned int), BASE_HEXA_MAJ, 0));
 	if (format == '%')
 		return (ft_putchar('%'));
 	return (0);

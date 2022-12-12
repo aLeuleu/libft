@@ -6,7 +6,7 @@
 #    By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 20:55:17 by alevra            #+#    #+#              #
-#    Updated: 2022/12/12 20:00:13 by alevra           ###   ########lyon.fr    #
+#    Updated: 2022/12/12 21:16:02 by alevra           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,7 +65,6 @@ SRC =	ft_memset.c			\
 		ft_printf.c
 
 OBJ = $(SRC:.c=.o)
-
 
 all	: $(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 10:53:02 by alevra            #+#    #+#             */
-/*   Updated: 2022/12/05 22:08:21 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/12/12 21:16:44 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static unsigned int		base_is_valid(char *base);
 static int				char_is_plus_or_minus(char c);
 
-int	ft_put_u_nbr_base(unsigned long nbr, char *base)
+int	ft_put_u_nbr_base(unsigned long nbr, char *base, int padding)
 {
 	unsigned int		base_size;
 	int					str_len;
@@ -26,9 +26,9 @@ int	ft_put_u_nbr_base(unsigned long nbr, char *base)
 	if (!(base_is_valid(base)))
 		return (-1);
 	base_size = ft_strlen(base);
-	if (nbr >= base_size)
-	{	
-		res = ft_put_u_nbr_base(nbr / base_size, base);
+	if (nbr >= base_size + 5) // why is there no padding ?
+ 	{	
+		res = ft_put_u_nbr_base(nbr / base_size, base, padding);
 		if (res < 0)
 			return (-1);
 		str_len += res;
