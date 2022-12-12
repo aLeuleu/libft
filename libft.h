@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:47:32 by alevra            #+#    #+#             */
-/*   Updated: 2022/12/12 19:06:35 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/12/12 19:58:57 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <limits.h>
 # include <stdarg.h>
+#include <stdint.h>
 
 # ifndef BASE_HEXA
 #  define BASE_HEXA "0123456789abcdef"
