@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 16:08:31 by alevra            #+#    #+#             */
-/*   Updated: 2022/12/12 19:06:04 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/12/12 20:08:25 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ static int	ft_put_ptr(unsigned long nbr)
 
 static int	switch_printf(char format, va_list args)
 {
+	if (format == 'b')
+		return (ft_put_u_nbr_base(va_arg(args, unsigned int), "01"));
 	if (format == 'c')
 		return ((int)ft_putchar((char)va_arg(args, int)));
 	if (format == 's')
@@ -60,7 +62,7 @@ int	ft_printf(const char *str, ...)
 	{
 		res = 0;
 		if (str[i] == '%' && str[i + 1]
-			&& ft_strchr("cspdiuxX%", (int)str[i + 1]))
+			&& ft_strchr("bcspdiuxX%", (int)str[i + 1]))
 			res = switch_printf(str[i++ + 1], args);
 		else if (str[i] != '%')
 			res = ft_putchar(str[i]);
