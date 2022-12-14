@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 16:08:31 by alevra            #+#    #+#             */
-/*   Updated: 2022/12/12 21:07:00 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/12/13 15:26:51 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	ft_put_ptr(unsigned long nbr)
 static int	switch_printf(char format, va_list args)
 {
 	if (format == 'b')
-		return (ft_put_u_nbr_base(va_arg(args, unsigned int), "01", 1));
+		return (ft_put_u_nbr_base(va_arg(args, unsigned int), "01", 3));
 	if (format == 'c')
 		return ((int)ft_putchar((char)va_arg(args, int)));
 	if (format == 's')
