@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 23:33:49 by alevra            #+#    #+#             */
-/*   Updated: 2022/12/05 23:05:25 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/12/15 22:41:11 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	ft_freetab(void **tab, int position)
 	free(tab);
 }
 
-static int	count_words(const char *str, char c)
+static int	count_words(const char *str, char c, int* res)
 {
 	int	i;
 	int	trigger;
@@ -38,6 +38,8 @@ static int	count_words(const char *str, char c)
 			trigger = 0;
 		str++;
 	}
+	if (res)
+		*res = i;
 	return (i);
 }
 
@@ -63,7 +65,7 @@ char	**ft_split(char const *s, char c)
 	int		index_start;
 	char	**splits;
 
-	splits = malloc((count_words(s, c) + 1) * sizeof(char *));
+	splits = malloc((count_words(s, c, NULL) + 1) * sizeof(char *));
 	if (!s || !(splits))
 		return (NULL);
 	i = 0;
