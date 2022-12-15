@@ -6,7 +6,7 @@
 #    By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 20:55:17 by alevra            #+#    #+#              #
-#    Updated: 2022/12/12 21:16:02 by alevra           ###   ########lyon.fr    #
+#    Updated: 2022/12/15 16:37:05 by alevra           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,23 +64,29 @@ SRC =	ft_memset.c			\
 		ft_lstmap.c			\
 		ft_printf.c
 
-OBJ = $(SRC:.c=.o)
+OBJ = $(addprefix obj/,$(SRC:.c=.o))
 
-all	: $(NAME)
+all	: create_obj_folder $(NAME)
 
 $(NAME): $(OBJ)
 	ar -rcs $(NAME) $(OBJ)
 
-%.o : %.c libft.h
-	gcc -c -Wall -Wextra -Werror $<
+obj/%.o : %.c libft.h
+	cc -c -Wall -Wextra -Werror $< -o $@
+
+create_obj_folder :
+	@if [ ! -d "./obj" ]; then\
+		mkdir -p obj;\
+	fi
 
 clean:
 	rm -f $(OBJ)
-
+	@if [ -d "./obj" ]; then\
+		rm -r obj;\
+	fi
 fclean: clean
 	rm -f $(NAME)
 
-re: fclean
-	${MAKE} all
+re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re create_obj_folder
