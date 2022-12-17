@@ -6,19 +6,11 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 23:33:49 by alevra            #+#    #+#             */
-/*   Updated: 2022/12/15 22:41:11 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/12/17 13:42:32 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static void	ft_freetab(void **tab, int position)
-{
-	if (position >= 0)
-		while (position >= 0)
-			free(tab[position--]);
-	free(tab);
-}
 
 static int	count_words(const char *str, char c, int* res)
 {
