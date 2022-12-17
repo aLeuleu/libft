@@ -6,13 +6,13 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 23:33:49 by alevra            #+#    #+#             */
-/*   Updated: 2022/12/17 13:42:32 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/12/17 15:20:52 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_words(const char *str, char c, int* res)
+static int	count_words(const char *str, char c, int *res)
 {
 	int	i;
 	int	trigger;
