@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:47:32 by alevra            #+#    #+#             */
-/*   Updated: 2022/12/17 15:07:44 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/12/22 12:23:40 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,5 @@ int					ft_itoa_printf(int n);
 size_t				ft_putchar(char c);
 int					ft_printf(const char *str, ...);
 void				ft_freetab(void **tab, int position);
-
+long long			ft_atoll(const char *a);
 #endif
