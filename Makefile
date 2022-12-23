@@ -6,7 +6,7 @@
 #    By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 20:55:17 by alevra            #+#    #+#              #
-#    Updated: 2022/12/22 11:54:56 by alevra           ###   ########lyon.fr    #
+#    Updated: 2022/12/23 17:43:24 by alevra           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,11 @@ SRC =	ft_memset.c			\
 		ft_lstmap.c			\
 		ft_printf.c			\
 		ft_freetab.c		\
-		ft_atoll.c			
+		ft_atoll.c			\
+		ft_isnumber.c		\
+		ft_strequ.c			\
+		ft_max.c			\
+		ft_overflow_int.c	\
 
 OBJ = $(addprefix obj/,$(SRC:.c=.o))
 

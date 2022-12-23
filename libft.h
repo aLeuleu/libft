@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:47:32 by alevra            #+#    #+#             */
-/*   Updated: 2022/12/22 12:23:40 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2022/12/23 17:44:51 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 void				*ft_memset(void *b, int c, size_t len);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
-void				*ft_memcpy_gnl(void *dst, const void *src, size_t n);
 void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memchr(const void *s, int c, size_t n);
 void				*ft_calloc(size_t count, size_t size);
@@ -94,4 +93,8 @@ size_t				ft_putchar(char c);
 int					ft_printf(const char *str, ...);
 void				ft_freetab(void **tab, int position);
 long long			ft_atoll(const char *a);
+int					ft_isnumber(const char *str);
+int					ft_strequ(char *str1, char *str2);
+size_t				ft_max(size_t a, size_t b);
+int					ft_overflow_int(long long nb);
 #endif
