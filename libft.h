@@ -6,13 +6,14 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:47:32 by alevra            #+#    #+#             */
-/*   Updated: 2022/12/23 17:44:51 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2023/01/09 13:54:03 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include "get_next_line.h"
 # include <limits.h>
 # include <stdarg.h>
 # include <stdint.h>
