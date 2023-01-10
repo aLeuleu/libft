@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:47:32 by alevra            #+#    #+#             */
-/*   Updated: 2023/01/09 13:54:03 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2023/01/10 11:53:46 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,4 +98,6 @@ int					ft_isnumber(const char *str);
 int					ft_strequ(char *str1, char *str2);
 size_t				ft_max(size_t a, size_t b);
 int					ft_overflow_int(long long nb);
+int					how_many_splits(const char *str, char c, int *res);
+
 #endif

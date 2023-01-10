@@ -6,13 +6,13 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 23:33:49 by alevra            #+#    #+#             */
-/*   Updated: 2022/12/21 15:02:37 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2023/01/10 11:53:24 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_words(const char *str, char c, int *res)
+int	how_many_splits(const char *str, char c, int *res)
 {
 	int	i;
 	int	trigger;
@@ -57,7 +57,7 @@ char	**ft_split(char const *s, char c)
 	int		index_start;
 	char	**splits;
 
-	splits = malloc((count_words(s, c, NULL) + 1) * sizeof(char *));
+	splits = malloc((how_many_splits(s, c, NULL) + 1) * sizeof(char *));
 	if (!s || !(splits))
 		return (NULL);
 	i = 0;
