@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 10:49:07 by alevra            #+#    #+#             */
-/*   Updated: 2022/11/23 14:47:03 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2023/01/10 11:30:57 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,20 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	len_s1;
 	size_t	len_s2;
 
-	if (!s1 || !s2)
+	len_s1 = 0;
+	len_s2 = 0;
+	if (!s1 && !s2)
 		return (NULL);
-	len_s1 = ft_strlen(s1);
-	len_s2 = ft_strlen(s2);
+	if (s1)
+		len_s1 = ft_strlen(s1);
+	if (s2)
+		len_s2 = ft_strlen(s2);
 	res = ft_strnew(len_s1 + len_s2);
 	if (!res)
 		return (NULL);
-	ft_strlcpy(res, s1, ft_strlen(s1) + 1);
-	ft_strlcpy(res + len_s1, s2, ft_strlen(s2) + 1);
+	if (s1)
+		ft_strlcpy(res, s1, ft_strlen(s1) + 1);
+	if (s2)
+		ft_strlcpy(res + len_s1, s2, ft_strlen(s2) + 1);
 	return (res);
 }
