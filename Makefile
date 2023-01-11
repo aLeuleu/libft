@@ -6,7 +6,7 @@
 #    By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 20:55:17 by alevra            #+#    #+#              #
-#    Updated: 2023/01/09 13:53:39 by alevra           ###   ########lyon.fr    #
+#    Updated: 2023/01/11 20:47:44 by alevra           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,7 +70,8 @@ SRC =	ft_memset.c			\
 		ft_max.c			\
 		ft_overflow_int.c	\
 		get_next_line.c		\
-		get_next_line_utils.c
+		get_next_line_utils.c \
+		ft_sqrt.c
 
 OBJ = $(addprefix obj/,$(SRC:.c=.o))
 
