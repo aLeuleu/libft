@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 13:42:46 by alevra            #+#    #+#             */
-/*   Updated: 2023/01/17 15:40:42 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2023/01/19 16:20:26 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_freetab(void **tab, int position)
 			if (!tab[position])
 				ft_printf("\n\nWARNING : trying to free a null pointer\n\n");
 			else
-				free(tab[position]);	
+				free(tab[position]);
 			position--;
 		}
 	}
