@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 23:33:49 by alevra            #+#    #+#             */
-/*   Updated: 2023/01/19 23:18:09 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2023/01/20 13:28:30 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	how_many_splits(const char *str, char c, int *res)
 
 	i = 0;
 	trigger = 0;
-	while (str && *str)
+	while (*str)
 	{
 		if (*str != c && trigger == 0)
 		{
@@ -56,18 +56,20 @@ char	**ft_split(char const *s, char c)
 	size_t	j;
 	int		index_start;
 	char	**splits;
+	size_t	strlen;
 
 	splits = malloc((how_many_splits(s, c, NULL) + 1) * sizeof(char *));
-	if (!s || !(splits))
+	if (!(splits))
 		return (NULL);
 	i = 0;
 	j = 0;
 	index_start = -1;
-	while (i <= ft_strlen(s))
+	strlen = ft_strlen(s);
+	while (i <= strlen)
 	{
 		if (s[i] != c && index_start < 0)
 			index_start = i++;
-		else if ((s[i++] == c || (i - 1) == ft_strlen(s)) && index_start >= 0)
+		else if ((s[i++] == c || (i - 1) == strlen) && index_start >= 0)
 		{
 			splits[j++] = word_dup(s, index_start, (i - 1));
 			if (splits[j - 1] == NULL)
