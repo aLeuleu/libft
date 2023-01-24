@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 00:52:45 by alevra            #+#    #+#             */
-/*   Updated: 2022/12/06 16:32:33 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2023/01/23 16:14:35 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <limits.h>
-
+# include "libft.h"
 # ifndef OPEN_MAX
 #  define OPEN_MAX 2048
 # endif

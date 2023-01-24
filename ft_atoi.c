@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:52:37 by alevra            #+#    #+#             */
-/*   Updated: 2023/01/21 13:33:02 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2023/01/23 17:14:57 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,24 +71,30 @@ int	ft_atoi(const char *a)
 static int	is_hexa(char c)
 {
 	int	is_number;
+	int	is_hex_letter_maj;
 	int	is_hex_letter;
 
-	is_number = (c >= '0' && c < '9');
-	is_hex_letter = (c >= 'A' && c <= 'F');
-	return (is_number || is_hex_letter);
+	is_number = (c >= '0' && c <= '9');
+	is_hex_letter_maj = (c >= 'A' && c <= 'F');
+	is_hex_letter = (c >= 'a' && c <= 'f');
+	return (is_number || is_hex_letter || is_hex_letter_maj);
 }
 
 static int	hex_value(char c)
 {
 	int	is_number;
 	int	is_hex_letter;
+	int	is_hex_letter_maj;
 
-	is_number = (c >= '0' && c < '9');
-	is_hex_letter = (c >= 'A' && c <= 'F');
+	is_number = (c >= '0' && c <= '9');
+	is_hex_letter_maj = (c >= 'A' && c <= 'F');
+	is_hex_letter = (c >= 'a' && c <= 'f');
 	if (is_number)
 		return (c - '0');
-	if (is_hex_letter)
+	if (is_hex_letter_maj)
 		return (c - 'A' + 10);
+	if (is_hex_letter)
+		return (c - 'a' + 10);
 	return (0);
 }
 
