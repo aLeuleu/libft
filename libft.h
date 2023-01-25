@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:47:32 by alevra            #+#    #+#             */
-/*   Updated: 2023/01/25 14:17:42 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2023/01/25 18:55:10 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,5 +104,7 @@ int			ft_min(int a, int b);
 int			ft_tablen(void **tab);
 int			ft_hextoi(const char *a);
 void		log_condition(int condition, char *msg, const char *fctn, int line);
+int			skip_whitespace(const char *a);
+int			ft_hextoi(const char *a);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 00:52:45 by alevra            #+#    #+#             */
-/*   Updated: 2023/01/23 16:14:35 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2023/01/25 17:32:08 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 11
+#  define BUFFER_SIZE 4096
 # endif
 
 # include <stdlib.h>

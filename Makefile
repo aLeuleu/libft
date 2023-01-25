@@ -6,7 +6,7 @@
 #    By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 20:55:17 by alevra            #+#    #+#              #
-#    Updated: 2023/01/25 14:10:49 by alevra           ###   ########lyon.fr    #
+#    Updated: 2023/01/25 18:55:36 by alevra           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,16 +75,17 @@ SRC =	ft_memset.c			\
 		ft_min.c			\
 		ft_tablen.c			\
 		log_condition.c		\
+		ft_hextoi.c			\
 
 OBJ = $(addprefix obj/,$(SRC:.c=.o))
 
 all	: create_obj_folder $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) Makefile
 	ar -rcs $(NAME) $(OBJ)
 
 obj/%.o : %.c libft.h
-	cc -c -Wall -Wextra -Werror $< -o $@
+	cc -c -Wall -Wextra -Werror -g3 $< -o $@
 
 create_obj_folder :
 	@if [ ! -d "./obj" ]; then\
