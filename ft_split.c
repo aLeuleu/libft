@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 23:33:49 by alevra            #+#    #+#             */
-/*   Updated: 2023/01/20 13:28:30 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2023/01/25 14:33:55 by alevra           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,13 @@ static char	*word_dup(const char *str, int start, int finish)
 	return (word);
 }
 
+static void	init_var(size_t *i, size_t *j, int *index_start)
+{
+	*i = 0;
+	*j = 0;
+	*index_start = 0;
+}
+
 char	**ft_split(char const *s, char c)
 {
 	size_t	i;
@@ -61,9 +68,7 @@ char	**ft_split(char const *s, char c)
 	splits = malloc((how_many_splits(s, c, NULL) + 1) * sizeof(char *));
 	if (!(splits))
 		return (NULL);
-	i = 0;
-	j = 0;
-	index_start = -1;
+	init_var(&i, &j, &index_start);
 	strlen = ft_strlen(s);
 	while (i <= strlen)
 	{
