@@ -6,20 +6,20 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:52:37 by alevra            #+#    #+#             */
-/*   Updated: 2022/12/22 13:55:00 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2023/02/06 03:29:55 by alevra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_plus_or_minus(char c)
+int	is_plus_or_minus(char c)
 {
 	if (c == '+' || c == '-')
 		return (1);
 	return (0);
 }
 
-static int	skip_whitespace(const char *a)
+int	skip_whitespace(const char *a)
 {
 	int	offset;
 

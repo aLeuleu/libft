@@ -6,7 +6,7 @@
 /*   By: alevra <alevra@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:52:37 by alevra            #+#    #+#             */
-/*   Updated: 2023/01/25 18:54:34 by alevra           ###   ########lyon.fr   */
+/*   Updated: 2023/02/06 21:24:47 by alevra           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,6 @@
 static int	is_number(char c)
 {
 	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
-}
-
-static int	is_plus_or_minus(char c)
-{
-	if (c == '+' || c == '-')
 		return (1);
 	return (0);
 }
